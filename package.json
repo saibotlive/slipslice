@@ -9,7 +9,7 @@
   "author": "leandro cabrera <leandcabrera@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "webpack --config webpack.production.config.js",
+    "heroku-postbuild": "node node_modules/webpack/bin/webpack.js --config webpack.production.config.js",
     "dev": "webpack",
     "deploy": "webpack --config webpack.production.config.js",
     "test": "eslint ./src/**/**.js"
