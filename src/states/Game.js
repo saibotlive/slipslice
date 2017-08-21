@@ -46,7 +46,7 @@ export default class extends Phaser.State {
       }
     }, this)
     const bgObj = map.objects['background'][0]
-    // this.bg = this.add.image(bgObj.x, bgObj.y - this.offsetHeight, 'layout')
+    this.bg = this.add.image(bgObj.x, bgObj.y - this.offsetHeight, 'layout')
 
     const cubes = map.objects['cubes']
 

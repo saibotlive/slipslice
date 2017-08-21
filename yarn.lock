@@ -2981,6 +2981,12 @@ performance-now@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
 
+phaser-arcade-slopes@^0.3.0:
+  version "0.3.0"
+  resolved "https://eurostar.jfrog.io/eurostar/api/npm/npm/phaser-arcade-slopes/-/phaser-arcade-slopes-0.3.0.tgz#ca1a0b9c6b9e350ce27810fd90029b4167673f01"
+  dependencies:
+    sat "0.6.0"
+
 phaser-ce@^2.8.3:
   version "2.8.3"
   resolved "https://registry.yarnpkg.com/phaser-ce/-/phaser-ce-2.8.3.tgz#59357f6473e9f9dd658bc72e0cde3753ba797add"
@@ -3110,6 +3116,10 @@ randombytes@^2.0.0, randombytes@^2.0.1:
 range-parser@~1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.0.tgz#f49be6b487894ddc40dcc94a322f611092e00d5e"
+
+raw-loader@~0.5.1:
+  version "0.5.1"
+  resolved "https://eurostar.jfrog.io/eurostar/api/npm/npm/raw-loader/-/raw-loader-0.5.1.tgz#0c3d0beaed8a01c966d9787bf778281252a979aa"
 
 rc@^1.1.7:
   version "1.2.1"
@@ -3339,6 +3349,16 @@ rx@4.1.0:
 safe-buffer@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
+
+sat@0.6.0:
+  version "0.6.0"
+  resolved "https://eurostar.jfrog.io/eurostar/api/npm/npm/sat/-/sat-0.6.0.tgz#359bf022d765d7b96be7e08c74375791d8df3784"
+
+script-loader@^0.7.0:
+  version "0.7.0"
+  resolved "https://eurostar.jfrog.io/eurostar/api/npm/npm/script-loader/-/script-loader-0.7.0.tgz#685dc7e7069e0dee7a92674f0ebc5b0f55baa5ec"
+  dependencies:
+    raw-loader "~0.5.1"
 
 "semver@2 || 3 || 4 || 5", semver@5.3.0, semver@^5.3.0:
   version "5.3.0"

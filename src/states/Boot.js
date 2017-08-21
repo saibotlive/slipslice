@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import WebFont from 'webfontloader'
+import 'script-loader!phaser-arcade-slopes' // eslint-disable-line no-webpack-loader-syntax
 
 export default class extends Phaser.State {
   init () {
