@@ -1,6 +1,7 @@
 {
   "name": "PhaserES6Webpack",
   "version": "1.0.0",
+  "private": true,
   "engines": {
     "node": "6.10.3"
   },
