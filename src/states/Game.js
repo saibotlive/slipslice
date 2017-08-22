@@ -13,6 +13,7 @@ export default class extends Phaser.State {
 
   create () {
     this.game.plugins.add(Phaser.Plugin.ArcadeSlopes)
+    this.game.time.advancedTiming = true
     const map = this.add.tilemap('map')
     map.addTilesetImage('slopes', 'slopes')
     this.world.setBounds(0, 0, this.worldWidth, this.worldHeight)
@@ -64,6 +65,8 @@ export default class extends Phaser.State {
     // this.player.body.velocity.y = -100
     this.game.slopes.enable(this.player)
     this.game.camera.follow(this.player)
+    this.fpsText = this.game.add.text(50, 50, '', { font: '16px Arial', fill: '#ff0000' })
+    this.fpsText.fixedToCamera = true
 
     /* map.objects.forEach(object => {
       8console.log('object', object)
@@ -89,6 +92,7 @@ export default class extends Phaser.State {
 
   update () {
     this.physics.arcade.collide(this.player, this.layers['collision'], this.collide)
+    this.fpsText.setText(this.game.time.fps + ' FPS')
     // console.log(this.game.camera.x)
     /* this.bg.tilePosition.x = -this.game.camera.x
     this.bg.tilePosition.y = -this.game.camera.y */

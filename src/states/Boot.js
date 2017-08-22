@@ -28,6 +28,12 @@ export default class extends Phaser.State {
     this.load.image('loaderBar', './assets/images/loader-bar.png')
   }
 
+  create () {
+    this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
+    this.scale.pageAlignHorizontally = true
+    this.scale.pageAlignVertically = true
+  }
+
   render () {
     if (this.fontsReady) {
       this.state.start('Preload')
