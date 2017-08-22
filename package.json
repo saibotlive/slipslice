@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "webpack",
     "heroku-postbuild": "webpack -p --config ./webpack.production.config.js --progress",
-    "start": "webpack --config webpack.production.config.js",
+    "start": "webpack",
     "deploy": "webpack --config webpack.production.config.js",
     "test": "eslint ./src/**/**.js"
   },
