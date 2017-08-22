@@ -36,7 +36,7 @@ export default class extends Phaser.State {
             }
           }, this)
         }, this)
-        console.log('coll', collisionTiles, layer.name)
+        console.log('colls', collisionTiles, layer.name)
         map.setCollision(collisionTiles, true, layer.name)
         this.game.slopes.convertTilemapLayer(this.layers[layer.name], {
           6: 'HALF_BOTTOM',
