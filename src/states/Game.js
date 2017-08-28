@@ -70,9 +70,10 @@ export default class extends Phaser.State {
     })
 
     const fire = this.map.objects['fire']
-    fire && fire.forEach(obj => {
-      this.objects.push(new Objects(this.game, obj.x, obj.y - this.diff, 'fire', this.sfx))
-    })
+    fire &&
+      fire.forEach(obj => {
+        this.objects.push(new Objects(this.game, obj.x, obj.y - this.diff, 'fire', this.sfx))
+      })
 
     const enemies = this.map.objects['enemies']
     enemies.forEach(obj => {
@@ -98,7 +99,7 @@ export default class extends Phaser.State {
       this.physics.arcade.overlap(this.player, this.objects, this.objectCollide, null, this)
       this.physics.arcade.collide(this.player, this.enemies, this.enemyCollide, null, this)
       if (config.levelCount < 4) {
-        if (this.player.x > this.worldWidth + this.player.width) {
+        if (this.player.x > this.worldWidth) {
           this.started = false
           config.levelCount++
           this.sfx.stop('claps')
