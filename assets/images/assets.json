@@ -8,9 +8,17 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":79,"h":79},
 	"sourceSize": {"w":79,"h":79}
 },
+"fire":
+{
+	"frame": {"x":80,"y":0,"w":143,"h":233},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":143,"h":233},
+	"sourceSize": {"w":143,"h":233}
+},
 "gull":
 {
-	"frame": {"x":80,"y":0,"w":101,"h":106},
+	"frame": {"x":224,"y":0,"w":101,"h":106},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":101,"h":106},
@@ -18,7 +26,7 @@
 },
 "orca":
 {
-	"frame": {"x":182,"y":0,"w":221,"h":158},
+	"frame": {"x":0,"y":234,"w":221,"h":158},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":221,"h":158},
@@ -26,7 +34,7 @@
 },
 "penguin":
 {
-	"frame": {"x":0,"y":159,"w":215,"h":156},
+	"frame": {"x":222,"y":234,"w":215,"h":156},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":215,"h":156},
@@ -34,7 +42,7 @@
 },
 "radiator":
 {
-	"frame": {"x":216,"y":159,"w":217,"h":137},
+	"frame": {"x":0,"y":393,"w":217,"h":137},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":217,"h":137},
@@ -42,7 +50,7 @@
 },
 "walrus":
 {
-	"frame": {"x":0,"y":316,"w":193,"h":143},
+	"frame": {"x":218,"y":393,"w":193,"h":143},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":193,"h":143},
@@ -50,7 +58,7 @@
 },
 "yeti":
 {
-	"frame": {"x":194,"y":316,"w":230,"h":183},
+	"frame": {"x":0,"y":537,"w":230,"h":183},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":230,"h":183},
@@ -61,7 +69,7 @@
 	"version": "16.5.1.104",
 	"image": "assets.png",
 	"format": "RGBA8888",
-	"size": {"w":512,"h":512},
+	"size": {"w":512,"h":1024},
 	"scale": "1"
 }
 }

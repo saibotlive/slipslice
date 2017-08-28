@@ -2,17 +2,34 @@ import Phaser from 'phaser'
 import config from '../config'
 
 export default class extends Phaser.Sprite {
-  constructor (game, x, y, asset) {
+  constructor (game, x, y, asset, sfx) {
     super(game, x, y, 'assets', asset)
     this.anchor.setTo(1.5, 1)
-    this.hitWidth = 60
-    this.hitHeight = 60
+    this.hitWidth = 70
+    this.hitHeight = 70
     this.game.physics.enable(this, Phaser.Physics.ARCADE)
-    this.body.setSize(this.hitWidth, this.hitHeight, this.width / 3, this.height - this.hitHeight)
-    this.body.velocity.x = 400
+    this.body.setSize(
+      this.hitWidth,
+      this.hitHeight,
+      this.width / 2,
+      this.height - this.hitHeight + 10
+    )
+    this.body.gravity.y = config.json.difficulty[config.difficulty].gravity
+    this.body.velocity.x = config.json.difficulty[config.difficulty].speed
     this.hit = false
+    this.onStairs = false
+    this.canJump = true
     this.game.add.existing(this)
+    this.game.input.onDown.add(this.handleJump, this)
+    this.sfx = sfx
     // stingray.animations.add('swim', Phaser.Animation.generateFrameNames('stingray', 0, 23, '', 4), 30, true);
-    console.log('cc', config.json.debug)
+  }
+
+  handleJump () {
+    if (this.canJump) {
+      this.sfx.play('jump')
+      this.body.velocity.y = config.json.difficulty[config.difficulty].jump
+      this.canJump = false
+    }
   }
 }

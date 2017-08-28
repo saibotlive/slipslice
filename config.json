@@ -1,8 +1,24 @@
 {
   "debug": false,
-  "levels": [
-    {
-      "speed": 100
+  "difficulty": {
+    "easy": {
+      "speed": 400,
+      "jump": -600,
+      "gravity": 1000
+    },
+    "pro": {
+      "speed": 500,
+      "jump": -500,
+      "gravity": 1000
     }
-  ]
+  },
+  "enemies": {
+    "yeti": { "hitX": 50 },
+    "orca": { "hitX": 50 },
+    "walrus": { "hitX": 50 },
+    "gull": { "hitX": 25 }
+  },
+  "level1": {
+    "speed": 100
+  }
 }
