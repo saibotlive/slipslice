@@ -1,28 +1,16 @@
 import Phaser from 'phaser'
-import WebFont from 'webfontloader'
+import config from '../config'
 import 'script-loader!phaser-arcade-slopes' // eslint-disable-line no-webpack-loader-syntax
 
 export default class extends Phaser.State {
   init () {
     this.stage.backgroundColor = '#EDEEC9'
     this.fontsReady = false
-    this.fontsLoaded = this.fontsLoaded.bind(this)
   }
 
   preload () {
-    WebFont.load({
-      google: {
-        families: ['Bangers']
-      },
-      active: this.fontsLoaded
-    })
-
-    let text = this.add.text(this.world.centerX, this.world.centerY, 'loading fonts', {
-      font: '16px Arial',
-      fill: '#dddddd',
-      align: 'center'
-    })
-    text.anchor.setTo(0.5, 0.5)
+    this.load.json('config', 'config.json')
+    this.load.bitmapFont('municipal', 'assets/fonts/municipal.png', 'assets/fonts/municipal.xml')
 
     this.load.image('loaderBg', './assets/images/loader-bg.png')
     this.load.image('loaderBar', './assets/images/loader-bar.png')
@@ -32,15 +20,7 @@ export default class extends Phaser.State {
     this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
     this.scale.pageAlignHorizontally = true
     this.scale.pageAlignVertically = true
-  }
-
-  render () {
-    if (this.fontsReady) {
-      this.state.start('Preload')
-    }
-  }
-
-  fontsLoaded () {
-    this.fontsReady = true
+    this.state.start('Preload')
+    config.json = this.cache.getJSON('config')
   }
 }

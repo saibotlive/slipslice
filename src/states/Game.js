@@ -1,5 +1,9 @@
 /* globals __DEV__ */
 import Phaser from 'phaser'
+import config from '../config'
+import Player from '../sprites/Player'
+import Objects from '../sprites/Objects'
+import Enemies from '../sprites/Enemies'
 
 export default class extends Phaser.State {
   init () {
@@ -8,25 +12,24 @@ export default class extends Phaser.State {
     this.worldHeight = 1680
     this.offsetHeight = 1696
     this.diff = this.offsetHeight - this.worldHeight
+    this.enemies = []
+    this.objects = []
   }
   preload () {}
 
   create () {
     this.game.plugins.add(Phaser.Plugin.ArcadeSlopes)
     this.game.time.advancedTiming = true
-    const map = this.add.tilemap('map')
-    map.addTilesetImage('slopes', 'slopes')
+    this.map = this.add.tilemap('level1')
+    this.map.addTilesetImage('slopes', 'slopes')
     this.world.setBounds(0, 0, this.worldWidth, this.worldHeight)
     this.layers = {}
-    map.layers.forEach(function (layer) {
-      this.layers[layer.name] = map.createLayer(layer.name)
-      // this.game.slopes.convertTilemapLayer(this.layers[layer.name], 'arcadeslopes')
-      // this.layers[layer.name].fixedToCamera = false
-      // console.log(this.layers[layer.name].height)
+    this.map.layers.forEach(function (layer) {
+      this.layers[layer.name] = this.map.createLayer(layer.name)
+
       if (layer.properties.collision) {
         // collision layer
         const collisionTiles = []
-        console.log('layers', layer)
         layer.data.forEach(function (dataRow) {
           // find tiles used in the layer
           // console.log('datarow', dataRow)
@@ -37,8 +40,7 @@ export default class extends Phaser.State {
             }
           }, this)
         }, this)
-        console.log('coll', collisionTiles, layer.name)
-        map.setCollision(collisionTiles, true, layer.name)
+        this.map.setCollision(collisionTiles, true, layer.name)
         this.game.slopes.convertTilemapLayer(this.layers[layer.name], {
           6: 'HALF_BOTTOM',
           11: 'HALF_BOTTOM_RIGHT',
@@ -46,56 +48,41 @@ export default class extends Phaser.State {
         })
       }
     }, this)
-    const bgObj = map.objects['background'][0]
+    const bgObj = this.map.objects['background'][0]
     this.bg = this.add.image(bgObj.x, bgObj.y - this.offsetHeight, 'layout')
 
-    const cubes = map.objects['cubes']
-
-    cubes.forEach(cube => {
-      const cb = this.add.image(cube.x, cube.y - this.diff, 'cube')
-      cb.anchor.set(0, 1)
+    const cubes = this.map.objects['cube']
+    cubes.forEach(obj => {
+      const cb = new Objects(this.game, obj.x, obj.y - this.diff, 'cube')
+      this.objects.push(cb)
     })
-    this.player = this.add.sprite(0, this.worldHeight - 300, 'penguin')
-    this.player.anchor.set(0, 0)
 
-    this.game.physics.enable(this.player, Phaser.Physics.ARCADE)
-    this.player.body.gravity.y = 1000
-    this.player.body.velocity.x = 400
-    this.player.hit = false
+    const radiators = this.map.objects['radiator']
+    radiators.forEach(obj => {
+      const cb = new Objects(this.game, obj.x, obj.y - this.diff, 'radiator')
+      this.objects.push(cb)
+    })
+
+    const yetis = this.map.objects['yeti']
+    yetis.forEach(obj => {
+      const cb = new Enemies(this.game, obj.x, obj.y - this.diff, 'yeti', obj.properties.flipped)
+      this.enemies.push(cb)
+    })
+
+    const playerObj = this.map.objects['player'][0]
+
+    this.player = new Player(this.game, playerObj.x, playerObj.y - this.diff, 'penguin')
+
     // this.player.body.velocity.y = -100
     this.game.slopes.enable(this.player)
     this.game.camera.follow(this.player)
     this.fpsText = this.game.add.text(50, 50, '', { font: '16px Arial', fill: '#ff0000' })
     this.fpsText.fixedToCamera = true
-
-    /* map.objects.forEach(object => {
-      8console.log('object', object)
-    }) */
-
-    /* let banner = this.add.text(this.world.centerX, this.game.height - 80, bannerText)
-    banner.font = 'Bangers'
-    banner.padding.set(10, 16)
-    banner.fontSize = 40
-    banner.fill = '#77BFA3'
-    banner.smoothed = false
-    banner.anchor.setTo(0.5)
-
-    this.mushroom = new Mushroom({
-      game: this.game,
-      x: this.world.centerX,
-      y: this.world.centerY,
-      asset: 'mushroom'
-    })
-
-    this.game.add.existing(this.mushroom) */
   }
 
   update () {
     this.physics.arcade.collide(this.player, this.layers['collision'], this.collide)
     this.fpsText.setText(this.game.time.fps + ' FPS')
-    // console.log(this.game.camera.x)
-    /* this.bg.tilePosition.x = -this.game.camera.x
-    this.bg.tilePosition.y = -this.game.camera.y */
   }
 
   collide (player, obj) {
@@ -112,8 +99,14 @@ export default class extends Phaser.State {
   }
 
   render () {
-    if (__DEV__) {
-      // this.game.debug.spriteInfo(this.mushroom, 32, 32)
+    if (config.json.debug === true) {
+      this.game.debug.body(this.player)
+      this.enemies.forEach(obj => {
+        this.game.debug.body(obj)
+      })
+      this.objects.forEach(obj => {
+        this.game.debug.body(obj)
+      })
     }
   }
 }

@@ -1,0 +1,67 @@
+﻿{"frames": {
+
+"cube":
+{
+	"frame": {"x":0,"y":0,"w":79,"h":79},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":79,"h":79},
+	"sourceSize": {"w":79,"h":79}
+},
+"gull":
+{
+	"frame": {"x":80,"y":0,"w":101,"h":106},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":101,"h":106},
+	"sourceSize": {"w":101,"h":106}
+},
+"orca":
+{
+	"frame": {"x":182,"y":0,"w":221,"h":158},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":221,"h":158},
+	"sourceSize": {"w":221,"h":158}
+},
+"penguin":
+{
+	"frame": {"x":0,"y":159,"w":215,"h":156},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":215,"h":156},
+	"sourceSize": {"w":215,"h":156}
+},
+"radiator":
+{
+	"frame": {"x":216,"y":159,"w":217,"h":137},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":217,"h":137},
+	"sourceSize": {"w":217,"h":137}
+},
+"walrus":
+{
+	"frame": {"x":0,"y":316,"w":193,"h":143},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":193,"h":143},
+	"sourceSize": {"w":193,"h":143}
+},
+"yeti":
+{
+	"frame": {"x":194,"y":316,"w":230,"h":183},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":230,"h":183},
+	"sourceSize": {"w":230,"h":183}
+}},
+"meta": {
+	"app": "Adobe Animate",
+	"version": "16.5.1.104",
+	"image": "assets.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1"
+}
+}
