@@ -4,6 +4,7 @@ import config from '../config'
 import Player from '../sprites/Player'
 import Objects from '../sprites/Objects'
 import Enemies from '../sprites/Enemies'
+import TempGuage from '../sprites/TempGuage'
 
 export default class extends Phaser.State {
   init () {
@@ -21,6 +22,7 @@ export default class extends Phaser.State {
     this.camX = 400
     this.camY = 0
     this.lerp = 0.1
+    this.score = 0
   }
   preload () {}
 
@@ -52,7 +54,7 @@ export default class extends Phaser.State {
           }, this)
         }, this)
         this.map.setCollision(collisionTiles, true, layer.name)
-        console.log('tiles', collisionTiles)
+        // console.log('tiles', collisionTiles)
         this.game.slopes.convertTilemapLayer(this.layers[layer.name], {
           14: 'FULL',
           20: 'HALF_BOTTOM_RIGHT',
@@ -94,6 +96,31 @@ export default class extends Phaser.State {
     // this.player.body.velocity.y = -100
     this.game.slopes.enable(this.player)
     // this.game.camera.follow(this.player)
+    this.header = this.add.image(this.game.width / 2, -20, 'screen_assets', 'logo')
+    this.header.anchor.set(0.5, 0)
+    this.header.fixedToCamera = true
+
+    this.tempguage = new TempGuage(this.game, this.game.width / 2, 20, 'tempguage')
+    this.pausebtn = this.add.image(this.game.width - 150, 20, 'screen_assets', 'pausebtn')
+    this.pausebtn.anchor.set(1, 0)
+    this.pausebtn.fixedToCamera = true
+
+    this.cube = this.add.image(this.game.width - 80, 20, 'assets', 'cube')
+    this.cube.fixedToCamera = true
+    this.cube.anchor.set(1, 0)
+    this.cube.scale.set(0.45)
+
+    this.scoreTxt = this.game.add.bitmapText(
+      this.game.width - 20,
+      20,
+      'municipal-points',
+      `${this.score}`,
+      36
+    )
+    this.scoreTxt.align = 'right'
+    this.scoreTxt.anchor.set(1, 0)
+    this.scoreTxt.fixedToCamera = true
+    this.scoreTxt.tint = 0x194cf3
     this.fpsText = this.game.add.text(50, 50, '', { font: '16px Arial', fill: '#ff0000' })
     this.fpsText.fixedToCamera = true
     this.started = true
@@ -109,14 +136,16 @@ export default class extends Phaser.State {
       this.physics.arcade.overlap(this.player, this.objects, this.objectCollide, null, this)
       this.physics.arcade.collide(this.player, this.enemies, this.enemyCollide, null, this)
       if (config.levelCount < 4) {
-        console.log(Math.round(this.player.x), this.worldWidth)
         if (this.player.x > this.worldWidth - 300) {
-          console.log('end')
           this.started = false
           config.levelCount++
           this.sfx.stop('claps')
           this.state.start('Game')
         }
+      }
+      if (this.tempguage.currentFrame === 99) {
+        this.started = false
+        this.state.start('Game')
       }
     }
 
@@ -151,6 +180,9 @@ export default class extends Phaser.State {
   }
 
   objectCollide (player, obj) {
+    this.tempguage.tempDrop(obj.points)
+    this.score += obj.points
+    this.scoreTxt.text = this.score
     obj.hit()
   }
 

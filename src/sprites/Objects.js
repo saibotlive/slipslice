@@ -8,6 +8,7 @@ export default class extends Phaser.Sprite {
     this.hitWidth = 75
     this.hitHeight = 75
     this.type = asset
+    this.points = config.json.items[asset].points
     this.game.physics.enable(this, Phaser.Physics.ARCADE)
     this.body.setSize(this.hitWidth, this.hitHeight, 0, this.height - this.hitHeight)
     this.game.add.existing(this)
@@ -24,7 +25,7 @@ export default class extends Phaser.Sprite {
           true
         )
     }
-    this.txt = this.game.add.bitmapText(this.x, this.y - 50, 'municipal-points', '+100', 50)
+    this.txt = this.game.add.bitmapText(this.x, this.y - 50, 'municipal-points', `+${this.points}`, 50)
     this.txt.alpha = 0
     this.txt.tint = 0xffff00
     this.sfx = sfx

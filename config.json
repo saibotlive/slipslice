@@ -4,13 +4,20 @@
     "easy": {
       "speed": 400,
       "jump": -600,
+      "tempRise": 200,
       "gravity": 1000
     },
     "pro": {
       "speed": 500,
       "jump": -500,
+      "tempRise": 200,
       "gravity": 1000
     }
+  },
+  "items": {
+    "cube": { "points": 10 },
+    "radiator": { "points": 20 },
+    "fire": { "points": 20 }
   },
   "enemies": {
     "yeti": { "hitX": 50 },
