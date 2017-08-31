@@ -3,7 +3,11 @@ import config from '../config'
 
 export default class extends Phaser.Sprite {
   constructor (game, x, y, asset, flipped, sfx) {
-    super(game, x, y, 'assets', asset)
+    //console.log(Object.keys(game.cache.getFrameData('assets')._frameNames))
+    const totalFrames = Object.keys(game.cache.getFrameData('assets')._frameNames)
+      .toString()
+      .split(asset).length
+    super(game, x, y, 'assets', totalFrames > 2 ? `${asset}0000` : asset)
     this.anchor.setTo(0.5, 1)
     flipped ? this.scale.setTo(-1, 1) : this.scale.setTo(1)
     this.hitWidth = 50
@@ -18,6 +22,15 @@ export default class extends Phaser.Sprite {
     )
     this.hit = false
     this.game.add.existing(this)
-    // stingray.animations.add('swim', Phaser.Animation.generateFrameNames('stingray', 0, 23, '', 4), 30, true);
+    if (totalFrames > 2) {
+      this.animations.add(
+        'move',
+        Phaser.Animation.generateFrameNames(asset, 0, totalFrames - 1, '', 4),
+        30,
+        true
+      )
+      this.animations.play('move')
+    }
+    //
   }
 }

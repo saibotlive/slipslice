@@ -17,6 +17,10 @@ export default class extends Phaser.State {
     this.playRate = 150
     this.nextPlay = 0
     this.started = false
+    this.cameraPos = new Phaser.Point(0, 0)
+    this.camX = 400
+    this.camY = 0
+    this.lerp = 0.1
   }
   preload () {}
 
@@ -84,10 +88,12 @@ export default class extends Phaser.State {
 
     const playerObj = this.map.objects['player'][0]
     this.player = new Player(this.game, playerObj.x, playerObj.y - this.diff, 'penguin', this.sfx)
+    this.camY = -200
+    this.cameraPos.setTo(this.camX, this.camY)
 
     // this.player.body.velocity.y = -100
     this.game.slopes.enable(this.player)
-    this.game.camera.follow(this.player)
+    // this.game.camera.follow(this.player)
     this.fpsText = this.game.add.text(50, 50, '', { font: '16px Arial', fill: '#ff0000' })
     this.fpsText.fixedToCamera = true
     this.started = true
@@ -95,11 +101,17 @@ export default class extends Phaser.State {
 
   update () {
     this.physics.arcade.collide(this.player, this.layers['collision'], this.collide, null, this)
+    this.cameraPos.x += (this.player.x + this.camX - this.cameraPos.x) * this.lerp
+    this.cameraPos.y += (this.player.y + this.camY - this.cameraPos.y) * this.lerp
+
+    this.game.camera.focusOnXY(this.cameraPos.x, this.cameraPos.y)
     if (this.started) {
       this.physics.arcade.overlap(this.player, this.objects, this.objectCollide, null, this)
       this.physics.arcade.collide(this.player, this.enemies, this.enemyCollide, null, this)
       if (config.levelCount < 4) {
-        if (this.player.x > this.worldWidth) {
+        console.log(Math.round(this.player.x), this.worldWidth)
+        if (this.player.x > this.worldWidth - 300) {
+          console.log('end')
           this.started = false
           config.levelCount++
           this.sfx.stop('claps')

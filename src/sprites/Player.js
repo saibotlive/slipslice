@@ -3,8 +3,8 @@ import config from '../config'
 
 export default class extends Phaser.Sprite {
   constructor (game, x, y, asset, sfx) {
-    super(game, x, y, 'assets', asset)
-    this.anchor.setTo(1.5, 1)
+    super(game, x, y, 'assets', `${asset}`)
+    this.anchor.setTo(0.5, 1)
     this.hitWidth = 70
     this.hitHeight = 70
     this.game.physics.enable(this, Phaser.Physics.ARCADE)
@@ -22,6 +22,8 @@ export default class extends Phaser.Sprite {
     this.game.add.existing(this)
     this.game.input.onDown.add(this.handleJump, this)
     this.sfx = sfx
+
+    //this.animations.add('move', Phaser.Animation.generateFrameNames(asset, 0, 39, '', 4), 30, true);
     // stingray.animations.add('swim', Phaser.Animation.generateFrameNames('stingray', 0, 23, '', 4), 30, true);
   }
 

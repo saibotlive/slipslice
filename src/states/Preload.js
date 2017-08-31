@@ -1,4 +1,5 @@
 import Phaser from 'phaser'
+import config from '../config'
 import audioData from '../audio/audioData'
 
 export default class extends Phaser.State {
@@ -18,8 +19,8 @@ export default class extends Phaser.State {
     this.load.image('layout', './assets/map/layout.png')
     this.load.atlas(
       'assets',
-      'assets/images/assets.png',
-      'assets/images/assets.json',
+      'assets/images/gameplay_assets.png',
+      'assets/images/gameplay_assets.json',
       Phaser.Loader.TEXTURE_ATLAS_JSON_HASH
     )
 
@@ -38,7 +39,6 @@ export default class extends Phaser.State {
       null,
       audioData
     )
-    
   }
 
   render () {
