@@ -138,12 +138,14 @@ export default class extends Phaser.State {
       if (config.levelCount < 4) {
         if (this.player.x > this.worldWidth - 300) {
           this.started = false
+          this.tempguage.stop()
           config.levelCount++
           this.sfx.stop('claps')
           this.state.start('Game')
         }
       }
       if (this.tempguage.currentFrame === 99) {
+        this.tempguage.stop()
         this.started = false
         this.state.start('Game')
       }
@@ -191,6 +193,7 @@ export default class extends Phaser.State {
     this.sfx.stop('claps')
     this.player.body.velocity.x = 0
     this.sfx.play('growl')
+    this.tempguage.stop()
     this.game.time.events.add(
       2000,
       () => {

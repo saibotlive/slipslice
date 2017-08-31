@@ -31,4 +31,7 @@ export default class extends Phaser.Sprite {
     }
     this.frameName = this.allFrames[this.currentFrame]
   }
+  stop () {
+    this.timer.stop()
+  }
 }

@@ -4,7 +4,7 @@
     "easy": {
       "speed": 400,
       "jump": -600,
-      "tempRise": 200,
+      "tempRise": 120,
       "gravity": 1000
     },
     "pro": {
