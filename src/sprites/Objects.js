@@ -3,9 +3,9 @@ import config from '../config'
 
 export default class extends Phaser.Sprite {
   constructor (game, x, y, asset, sfx) {
-    super(game, x, y, 'assets', asset)
+    super(game, x, y, 'assets', asset !== 'cube' ? `${asset}0000` : asset)
     this.anchor.setTo(0.5, 1)
-    this.hitWidth = 75
+    this.hitWidth = this.width
     this.hitHeight = 75
     this.type = asset
     this.points = config.json.items[asset].points
@@ -25,23 +25,32 @@ export default class extends Phaser.Sprite {
           true
         )
     }
-    this.txt = this.game.add.bitmapText(this.x, this.y - 50, 'municipal-points', `+${this.points}`, 50)
+    this.txt = this.game.add.bitmapText(
+      this.x,
+      this.y - 50,
+      'municipal-points',
+      `+${this.points}`,
+      50
+    )
     this.txt.alpha = 0
     this.txt.tint = 0xffff00
     this.sfx = sfx
+    this.touched = false
     // stingray.animations.add('swim', Phaser.Animation.generateFrameNames('stingray', 0, 23, '', 4), 30, true);
   }
 
   hit () {
-    this.txt.alpha = 1
-    this.playSound(this.type)
-    this.tween = this.game.add
-      .tween(this.txt)
-      .to({ y: this.txt.y - 100 }, 300, Phaser.Easing.Quadratic.InOut, true, 0, 0, true)
-    this.tween.onComplete.add((obj, tw) => {
-      this.txt.destroy()
-    }, this)
-    this.destroy()
+    if (!this.touched) {
+      this.txt.alpha = 1
+      this.playSound(this.type)
+      this.tween = this.game.add
+        .tween(this.txt)
+        .to({ y: this.txt.y - 100 }, 300, Phaser.Easing.Quadratic.InOut, true, 0, 0, true)
+      this.tween.onComplete.add((obj, tw) => {
+        this.txt.destroy()
+      }, this)
+      this.type === 'cube' ? this.destroy() : (this.frameName = `${this.type}0001`)
+    }
   }
 
   playSound (type) {

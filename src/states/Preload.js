@@ -6,10 +6,6 @@ export default class extends Phaser.State {
   init () {}
 
   preload () {
-    this.load.image('loaderBg', './assets/images/loader-bg.png')
-    this.load.image('loaderBar', './assets/images/loader-bar.png')
-    this.load.image('mushroom', 'assets/images/mushroom2.png')
-
     this.load.tilemap('map', './assets/map/slipslice.json', null, Phaser.Tilemap.TILED_JSON)
     this.load.tilemap('level1', './assets/map/level1.json', null, Phaser.Tilemap.TILED_JSON)
     this.load.tilemap('level2', './assets/map/level2.json', null, Phaser.Tilemap.TILED_JSON)
@@ -24,7 +20,6 @@ export default class extends Phaser.State {
       Phaser.Loader.TEXTURE_ATLAS_JSON_HASH
     )
 
-    this.load.image('cube', 'assets/map/cube.png')
     this.load.image('tile', 'assets/map/tile.png')
     this.game.load.spritesheet('slopes', 'assets/map/slopes-32.png', 32, 32)
     this.load.atlas(
@@ -45,9 +40,20 @@ export default class extends Phaser.State {
       null,
       audioData
     )
+    this.add.image(0, 0, 'preloaderBg')
+    this.txt = this.game.add.bitmapText(this.game.width / 2, 370, 'municipal', `${0}%`, 30)
+    this.txt.anchor.set(0.5, 0)
+    this.txt.align = 'center'
+    this.txt.tint = 0xff6680
+    this.loadUpdate.resetLocked = true
+  }
+
+  loadUpdate () {
+    if (this.load.progress < 100) this.txt.text = `${this.load.progress}%`
   }
 
   render () {
+    // this.txt.text = ''
     this.state.start('Game')
   }
 }

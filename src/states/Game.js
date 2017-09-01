@@ -54,11 +54,10 @@ export default class extends Phaser.State {
           }, this)
         }, this)
         this.map.setCollision(collisionTiles, true, layer.name)
-        // console.log('tiles', collisionTiles)
         this.game.slopes.convertTilemapLayer(this.layers[layer.name], {
-          14: 'FULL',
-          20: 'HALF_BOTTOM_RIGHT',
-          19: 'HALF_BOTTOM_LEFT'
+          15: 'FULL',
+          21: 'HALF_BOTTOM_RIGHT',
+          20: 'HALF_BOTTOM_LEFT'
         })
       }
     }, this)
@@ -75,10 +74,10 @@ export default class extends Phaser.State {
       this.objects.push(new Objects(this.game, obj.x, obj.y - this.diff, 'radiator', this.sfx))
     })
 
-    const fire = this.map.objects['fire']
-    fire &&
-      fire.forEach(obj => {
-        this.objects.push(new Objects(this.game, obj.x, obj.y - this.diff, 'fire', this.sfx))
+    const bbq = this.map.objects['bbq']
+    bbq &&
+      bbq.forEach(obj => {
+        this.objects.push(new Objects(this.game, obj.x, obj.y - this.diff, 'bbq', this.sfx))
       })
 
     const enemies = this.map.objects['enemies']
@@ -91,8 +90,11 @@ export default class extends Phaser.State {
     const playerObj = this.map.objects['player'][0]
     this.player = new Player(this.game, playerObj.x, playerObj.y - this.diff, 'penguin', this.sfx)
     this.camY = -200
-    this.cameraPos.setTo(this.camX, this.camY)
-
+    this.cameraPos.setTo(
+      (this.player.x + this.camX - this.cameraPos.x) * this.lerp,
+      (this.player.y + this.camY - this.cameraPos.y) * this.lerp
+    )
+    this.game.time.events.add(100, () => this.game.camera.follow(null))
     // this.player.body.velocity.y = -100
     this.game.slopes.enable(this.player)
     // this.game.camera.follow(this.player)
@@ -155,12 +157,12 @@ export default class extends Phaser.State {
   }
 
   collide (player, obj) {
-    if (obj.index === 20) {
+    if (obj.index === 21) {
       player.onStairs = true
       this.playLoop('upstairs')
       player.body.velocity.x += 20
       player.angle = -10
-    } else if (obj.index === 19) {
+    } else if (obj.index === 20) {
       player.onStairs = true
       this.playLoop('downstairs')
       player.angle = 10
@@ -182,10 +184,12 @@ export default class extends Phaser.State {
   }
 
   objectCollide (player, obj) {
-    this.tempguage.tempDrop(obj.points)
-    this.score += obj.points
-    this.scoreTxt.text = this.score
-    obj.hit()
+    if (obj.type === 'cube' || obj.body.touching.up) {
+      this.tempguage.tempDrop(obj.points)
+      this.score += obj.points
+      this.scoreTxt.text = this.score
+      obj.hit()
+    }
   }
 
   enemyCollide (player, enm) {

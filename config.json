@@ -17,7 +17,7 @@
   "items": {
     "cube": { "points": 10 },
     "radiator": { "points": 20 },
-    "fire": { "points": 20 }
+    "bbq": { "points": 20 }
   },
   "enemies": {
     "yeti": { "hitX": 50 },
