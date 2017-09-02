@@ -149,13 +149,11 @@ export default class extends Phaser.State {
       this.physics.arcade.overlap(this.player, this.cubes, this.cubeCollide, null, this)
       this.physics.arcade.collide(this.player, this.objects, this.objectCollide, null, this)
       this.physics.arcade.collide(this.player, this.enemies, this.enemyCollide, null, this)
-      if (config.levelCount < 4) {
-        if (this.player.x > this.worldWidth - 300) {
-          this.started = false
-          this.tempguage.stop()
-          this.sfx.stop('claps')
-          if (this.tempguage.currentFrame <= 49) this.state.start('Party', FadeOut, FadeIn)
-        }
+      if (this.player.x > this.worldWidth - 300) {
+        this.started = false
+        this.tempguage.stop()
+        this.sfx.stop('claps')
+        if (this.tempguage.currentFrame <= 49) this.state.start('Party', FadeOut, FadeIn)
       }
       if (this.tempguage.currentFrame === 99) {
         this.tempguage.stop()
