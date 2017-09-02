@@ -10,7 +10,7 @@ export default class extends Phaser.Sprite {
     this.type = asset
     this.points = config.json.items[asset].points
     this.game.physics.enable(this, Phaser.Physics.ARCADE)
-    this.body.setSize(this.hitWidth, this.hitHeight, 0, this.height - this.hitHeight)
+    this.body.setSize(this.hitWidth, this.hitHeight, 0, 0)
     this.game.add.existing(this)
     if (asset === 'cube') {
       this.game.add
@@ -25,7 +25,7 @@ export default class extends Phaser.Sprite {
           true
         )
     }
-    this.txt = this.game.add.bitmapText(
+    /* this.txt = this.game.add.bitmapText(
       this.x,
       this.y - 50,
       'municipal-points',
@@ -33,7 +33,16 @@ export default class extends Phaser.Sprite {
       50
     )
     this.txt.alpha = 0
-    this.txt.tint = 0xffff00
+    this.txt.tint = 0xffff00 */
+
+    this.txt = this.game.add.text(this.x - 20, this.y - 100, `+${this.points}`, {
+      font: '50px Municipal',
+      stroke: '#000000',
+      strokeThickness: 3,
+      fill: '#ffff00',
+      align: 'center'
+    })
+    this.txt.alpha = 0
     this.sfx = sfx
     this.touched = false
     // stingray.animations.add('swim', Phaser.Animation.generateFrameNames('stingray', 0, 23, '', 4), 30, true);

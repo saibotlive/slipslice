@@ -3,15 +3,15 @@
   "difficulty": {
     "easy": {
       "speed": 400,
-      "jump": -600,
+      "jump": -700,
       "tempRise": 120,
-      "gravity": 1000
+      "gravity": 1500
     },
     "pro": {
-      "speed": 500,
-      "jump": -500,
+      "speed": 400,
+      "jump": -700,
       "tempRise": 200,
-      "gravity": 1000
+      "gravity": 1500
     }
   },
   "items": {
@@ -25,7 +25,334 @@
     "walrus": { "hitX": 50 },
     "gull": { "hitX": 25 }
   },
-  "level1": {
-    "speed": 100
+  "party": {
+    "1": {
+      "title": "YOUR PARTY IS ICE COLD",
+      "penguins": [
+        {
+          "x": 806,
+          "y": 364,
+          "flipped": false,
+          "fps": 25,
+          "type": "dj_penguin"
+        },
+        {
+          "x": 280,
+          "y": 290,
+          "flipped": false,
+          "fps": 25,
+          "type": "slidy_penguin"
+        },
+        {
+          "x": 460,
+          "y": 354,
+          "flipped": false,
+          "fps": 25,
+          "type": "party_penguin"
+        },
+        {
+          "x": 420,
+          "y": 374,
+          "flipped": false,
+          "fps": 25,
+          "type": "hyper_penguin"
+        },
+        {
+          "x": 380,
+          "y": 374,
+          "flipped": false,
+          "fps": 25,
+          "type": "jumpy_penguin"
+        },
+        {
+          "x": 521,
+          "y": 356,
+          "flipped": false,
+          "fps": 25,
+          "type": "spinny_penguin"
+        },
+        {
+          "x": 234,
+          "y": 354,
+          "flipped": true,
+          "fps": 25,
+          "type": "headbanger"
+        },
+        {
+          "x": 335,
+          "y": 388,
+          "flipped": false,
+          "fps": 25,
+          "type": "snappy_penguin"
+        },
+        {
+          "x": 620,
+          "y": 364,
+          "flipped": false,
+          "fps": 25,
+          "type": "leap_penguin"
+        },
+        {
+          "x": 186,
+          "y": 354,
+          "flipped": false,
+          "fps": 25,
+          "type": "teeter_penguin"
+        },
+        {
+          "x": 88,
+          "y": 354,
+          "flipped": false,
+          "fps": 25,
+          "type": "crazy_penguin"
+        }
+      ]
+    },
+    "2": {
+      "title": "YOUR PARTY IS ICE COLD",
+      "penguins": [
+        {
+          "x": 806,
+          "y": 364,
+          "flipped": false,
+          "fps": 25,
+          "type": "dj_penguin"
+        },
+        {
+          "x": 280,
+          "y": 290,
+          "flipped": false,
+          "fps": 25,
+          "type": "slidy_penguin"
+        },
+        {
+          "x": 460,
+          "y": 354,
+          "flipped": false,
+          "fps": 25,
+          "type": "party_penguin"
+        },
+        {
+          "x": 420,
+          "y": 374,
+          "flipped": false,
+          "fps": 25,
+          "type": "hyper_penguin"
+        },
+        {
+          "x": 380,
+          "y": 374,
+          "flipped": false,
+          "fps": 25,
+          "type": "jumpy_penguin"
+        },
+        {
+          "x": 521,
+          "y": 356,
+          "flipped": false,
+          "fps": 25,
+          "type": "spinny_penguin"
+        },
+        {
+          "x": 234,
+          "y": 354,
+          "flipped": true,
+          "fps": 25,
+          "type": "headbanger"
+        },
+        {
+          "x": 335,
+          "y": 388,
+          "flipped": false,
+          "fps": 25,
+          "type": "snappy_penguin"
+        },
+        {
+          "x": 620,
+          "y": 364,
+          "flipped": false,
+          "fps": 25,
+          "type": "leap_penguin"
+        },
+        {
+          "x": 186,
+          "y": 354,
+          "flipped": false,
+          "fps": 25,
+          "type": "teeter_penguin"
+        },
+        {
+          "x": 88,
+          "y": 354,
+          "flipped": false,
+          "fps": 25,
+          "type": "crazy_penguin"
+        }
+      ]
+    },
+    "3": {
+      "title": "YOUR PARTY IS ICE COLD",
+      "penguins": [
+        {
+          "x": 806,
+          "y": 364,
+          "flipped": false,
+          "fps": 25,
+          "type": "dj_penguin"
+        },
+        {
+          "x": 280,
+          "y": 290,
+          "flipped": false,
+          "fps": 25,
+          "type": "slidy_penguin"
+        },
+        {
+          "x": 460,
+          "y": 354,
+          "flipped": false,
+          "fps": 25,
+          "type": "party_penguin"
+        },
+        {
+          "x": 420,
+          "y": 374,
+          "flipped": false,
+          "fps": 25,
+          "type": "hyper_penguin"
+        },
+        {
+          "x": 380,
+          "y": 374,
+          "flipped": false,
+          "fps": 25,
+          "type": "jumpy_penguin"
+        },
+        {
+          "x": 521,
+          "y": 356,
+          "flipped": false,
+          "fps": 25,
+          "type": "spinny_penguin"
+        },
+        {
+          "x": 234,
+          "y": 354,
+          "flipped": true,
+          "fps": 25,
+          "type": "headbanger"
+        },
+        {
+          "x": 335,
+          "y": 388,
+          "flipped": false,
+          "fps": 25,
+          "type": "snappy_penguin"
+        },
+        {
+          "x": 620,
+          "y": 364,
+          "flipped": false,
+          "fps": 25,
+          "type": "leap_penguin"
+        },
+        {
+          "x": 186,
+          "y": 354,
+          "flipped": false,
+          "fps": 25,
+          "type": "teeter_penguin"
+        },
+        {
+          "x": 88,
+          "y": 354,
+          "flipped": false,
+          "fps": 25,
+          "type": "crazy_penguin"
+        }
+      ]
+    },
+    "4": {
+      "title": "YOUR PARTY IS ICE COLD",
+      "penguins": [
+        {
+          "x": 806,
+          "y": 364,
+          "flipped": false,
+          "fps": 25,
+          "type": "dj_penguin"
+        },
+        {
+          "x": 280,
+          "y": 290,
+          "flipped": false,
+          "fps": 25,
+          "type": "slidy_penguin"
+        },
+        {
+          "x": 460,
+          "y": 354,
+          "flipped": false,
+          "fps": 25,
+          "type": "party_penguin"
+        },
+        {
+          "x": 420,
+          "y": 374,
+          "flipped": false,
+          "fps": 25,
+          "type": "hyper_penguin"
+        },
+        {
+          "x": 380,
+          "y": 374,
+          "flipped": false,
+          "fps": 25,
+          "type": "jumpy_penguin"
+        },
+        {
+          "x": 521,
+          "y": 356,
+          "flipped": false,
+          "fps": 25,
+          "type": "spinny_penguin"
+        },
+        {
+          "x": 234,
+          "y": 354,
+          "flipped": true,
+          "fps": 25,
+          "type": "headbanger"
+        },
+        {
+          "x": 335,
+          "y": 388,
+          "flipped": false,
+          "fps": 25,
+          "type": "snappy_penguin"
+        },
+        {
+          "x": 620,
+          "y": 364,
+          "flipped": false,
+          "fps": 25,
+          "type": "leap_penguin"
+        },
+        {
+          "x": 186,
+          "y": 354,
+          "flipped": false,
+          "fps": 25,
+          "type": "teeter_penguin"
+        },
+        {
+          "x": 88,
+          "y": 354,
+          "flipped": false,
+          "fps": 25,
+          "type": "crazy_penguin"
+        }
+      ]
+    }
   }
 }

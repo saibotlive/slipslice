@@ -3,7 +3,7 @@ import config from '../config'
 
 export default class extends Phaser.Sprite {
   constructor (game, x, y, asset, sfx) {
-    super(game, x, y, 'assets', `${asset}`)
+    super(game, x, y, 'assets', `${asset}0000`)
     this.anchor.setTo(0.5, 1)
     this.hitWidth = 70
     this.hitHeight = 70
@@ -14,8 +14,9 @@ export default class extends Phaser.Sprite {
       this.width / 2,
       this.height - this.hitHeight + 10
     )
+    this.speed = config.json.difficulty[config.difficulty].speed
     this.body.gravity.y = config.json.difficulty[config.difficulty].gravity
-    this.body.velocity.x = config.json.difficulty[config.difficulty].speed
+    this.body.velocity.x = this.speed
     this.hit = false
     this.onStairs = false
     this.canJump = true
@@ -23,7 +24,7 @@ export default class extends Phaser.Sprite {
     this.game.input.onDown.add(this.handleJump, this)
     this.sfx = sfx
 
-    //this.animations.add('move', Phaser.Animation.generateFrameNames(asset, 0, 39, '', 4), 30, true);
+    // this.animations.add('move', Phaser.Animation.generateFrameNames(asset, 0, 39, '', 4), 30, true);
     // stingray.animations.add('swim', Phaser.Animation.generateFrameNames('stingray', 0, 23, '', 4), 30, true);
   }
 

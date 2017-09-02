@@ -39,7 +39,7 @@ export default {
     party: {
       start: 128,
       end: 143.36290249433105,
-      loop: false
+      loop: true
     },
     penguin: {
       start: 145,

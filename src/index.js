@@ -5,6 +5,7 @@ import BootState from './states/Boot'
 import PreloadState from './states/Preload'
 import SplashState from './states/Splash'
 import GameState from './states/Game'
+import PartyState from './states/Party'
 
 import config from './config'
 
@@ -19,6 +20,7 @@ class Game extends Phaser.Game {
     this.state.add('Preload', PreloadState, false)
     this.state.add('Splash', SplashState, false)
     this.state.add('Game', GameState, false)
+    this.state.add('Party', PartyState, false)
 
     this.state.start('Boot')
   }

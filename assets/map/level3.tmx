@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="left-down" width="356" height="53" tilewidth="32" tileheight="32" nextobjectid="109">
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="left-down" width="356" height="53" tilewidth="32" tileheight="32" nextobjectid="154">
  <tileset firstgid="1" name="tiles" tilewidth="11364" tileheight="1680" tilecount="10" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
@@ -51,11 +51,11 @@
   <object id="12" gid="10" x="4064.89" y="1529.69" width="217" height="137"/>
   <object id="19" gid="10" x="5560" y="1528" width="217" height="137"/>
   <object id="27" gid="10" x="8344" y="1528" width="217" height="137"/>
-  <object id="46" gid="10" x="3056" y="1152" width="217" height="137"/>
+  <object id="46" gid="10" x="3424" y="1152" width="217" height="137"/>
   <object id="70" gid="10" x="9237" y="1152" width="217" height="137"/>
   <object id="85" gid="10" x="2152" y="768" width="217" height="137"/>
   <object id="88" gid="10" x="3096" y="768" width="217" height="137"/>
-  <object id="93" gid="10" x="5080" y="768" width="217" height="137"/>
+  <object id="93" gid="10" x="4912" y="768" width="217" height="137"/>
   <object id="102" gid="10" x="8501" y="768" width="217" height="137"/>
  </objectgroup>
  <objectgroup name="enemies">
@@ -84,17 +84,17 @@
     <property name="flipped" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="84" name="walrus" gid="2147483659" x="1688" y="764" width="193" height="143">
+  <object id="84" name="walrus" gid="2147483659" x="1576" y="764" width="193" height="143">
    <properties>
     <property name="flipped" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="89" name="walrus" gid="11" x="3384" y="768" width="193" height="143">
+  <object id="89" name="walrus" gid="11" x="3328" y="768" width="193" height="143">
    <properties>
     <property name="flipped" type="bool" value="true"/>
    </properties>
   </object>
-  <object id="94" name="walrus" gid="2147483659" x="5388" y="764" width="193" height="143">
+  <object id="94" name="walrus" gid="2147483659" x="5164" y="764" width="193" height="143">
    <properties>
     <property name="flipped" type="bool" value="true"/>
    </properties>
@@ -105,6 +105,7 @@
    </properties>
   </object>
  </objectgroup>
+ <objectgroup name="bbq"/>
  <objectgroup name="cube">
   <object id="2" gid="1" x="896" y="1424" width="79" height="79"/>
   <object id="3" gid="1" x="984" y="1424" width="79" height="79"/>
@@ -134,8 +135,8 @@
   <object id="41" gid="1" x="1928" y="1128" width="79" height="79"/>
   <object id="42" gid="1" x="1840" y="1128" width="79" height="79"/>
   <object id="43" gid="1" x="2016" y="1128" width="79" height="79"/>
-  <object id="47" gid="1" x="3736" y="1032" width="79" height="79"/>
-  <object id="48" gid="1" x="3822.44" y="1032" width="79" height="79"/>
+  <object id="47" gid="1" x="3880" y="1032" width="79" height="79"/>
+  <object id="48" gid="1" x="3966.44" y="1032" width="79" height="79"/>
   <object id="49" gid="1" x="5576" y="1047" width="79" height="79"/>
   <object id="50" gid="1" x="5664" y="1047" width="79" height="79"/>
   <object id="51" gid="1" x="5488" y="1047" width="79" height="79"/>
@@ -156,17 +157,17 @@
   <object id="75" gid="1" x="256" y="744" width="79" height="79"/>
   <object id="76" gid="1" x="168" y="744" width="79" height="79"/>
   <object id="77" gid="1" x="1048" y="712" width="79" height="79"/>
-  <object id="78" gid="1" x="1444" y="615" width="79" height="79"/>
-  <object id="79" gid="1" x="1532" y="615" width="79" height="79"/>
-  <object id="80" gid="1" x="1356" y="615" width="79" height="79"/>
-  <object id="82" gid="1" x="2032" y="705" width="79" height="79"/>
+  <object id="78" gid="1" x="1292" y="615" width="79" height="79"/>
+  <object id="79" gid="1" x="1380" y="615" width="79" height="79"/>
+  <object id="80" gid="1" x="1204" y="615" width="79" height="79"/>
+  <object id="82" gid="1" x="1944" y="705" width="79" height="79"/>
   <object id="86" gid="1" x="2828" y="744" width="79" height="79"/>
   <object id="87" gid="1" x="2916" y="744" width="79" height="79"/>
-  <object id="90" gid="1" x="3736" y="688" width="79" height="79"/>
-  <object id="91" gid="1" x="3824" y="688" width="79" height="79"/>
+  <object id="90" gid="1" x="3808" y="688" width="79" height="79"/>
+  <object id="91" gid="1" x="3896" y="688" width="79" height="79"/>
   <object id="92" gid="1" x="4464" y="688" width="79" height="79"/>
-  <object id="95" gid="1" x="5754" y="619" width="79" height="79"/>
-  <object id="96" gid="1" x="5666" y="619" width="79" height="79"/>
+  <object id="95" gid="1" x="5866" y="715" width="79" height="79"/>
+  <object id="96" gid="1" x="5778" y="715" width="79" height="79"/>
   <object id="97" gid="1" x="6432" y="701" width="79" height="79"/>
   <object id="98" gid="1" x="6992" y="610" width="79" height="79"/>
   <object id="99" gid="1" x="7080" y="610" width="79" height="79"/>
@@ -179,6 +180,6 @@
   <object id="108" gid="1" x="9768" y="693" width="79" height="79"/>
  </objectgroup>
  <objectgroup name="player">
-  <object id="8" gid="5" x="144" y="745" width="215" height="156"/>
+  <object id="8" gid="5" x="88" y="728" width="215" height="156"/>
  </objectgroup>
 </map>

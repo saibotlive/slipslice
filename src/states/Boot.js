@@ -1,6 +1,9 @@
 import Phaser from 'phaser'
 import config from '../config'
-import 'script-loader!phaser-arcade-slopes' // eslint-disable-line no-webpack-loader-syntax
+import 'phaser-state-transition'
+import 'script-loader!phaser-arcade-slopes'
+import 'script-loader!phaser-camera-offset'
+import WebFont from 'webfontloader'
 
 export default class extends Phaser.State {
   init () {
@@ -9,9 +12,20 @@ export default class extends Phaser.State {
   }
 
   preload () {
+    WebFont.load({
+      custom: {
+        families: ['Municipal']
+      },
+      active: this.fontsLoaded
+    })
+
     this.load.json('config', 'config.json')
-    this.load.bitmapFont('municipal', 'assets/fonts/municipal.png', 'assets/fonts/municipal.xml')
-    this.load.bitmapFont('municipal-points', 'assets/fonts/municipal-points.png', 'assets/fonts/municipal-points.xml')
+    /* this.load.bitmapFont('municipal', 'assets/fonts/municipal.png', 'assets/fonts/municipal.xml')
+    this.load.bitmapFont(
+      'municipal-points',
+      'assets/fonts/municipal-points.png',
+      'assets/fonts/municipal-points.xml'
+    ) */
 
     this.load.image('preloaderBg', './assets/images/preloader-bg.png')
   }
@@ -20,7 +34,16 @@ export default class extends Phaser.State {
     this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
     this.scale.pageAlignHorizontally = true
     this.scale.pageAlignVertically = true
-    this.state.start('Preload')
+
     config.json = this.cache.getJSON('config')
+  }
+  render () {
+    if (this.fontsReady) {
+      this.state.start('Preload')
+    }
+  }
+
+  fontsLoaded = () => {
+    this.fontsReady = true
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "PhaserES6Webpack",
+  "name": "SlipnSlice",
   "version": "1.0.0",
   "private": true,
   "engines": {
@@ -37,7 +37,9 @@
   },
   "dependencies": {
     "phaser-arcade-slopes": "^0.3.0",
+    "phaser-camera-offset": "^1.0.1",
     "phaser-ce": "^2.8.3",
+    "phaser-state-transition": "^2.4.3",
     "script-loader": "^0.7.0",
     "webfontloader": "^1.6.28"
   }

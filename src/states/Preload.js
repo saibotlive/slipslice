@@ -19,8 +19,15 @@ export default class extends Phaser.State {
       'assets/images/gameplay_assets.json',
       Phaser.Loader.TEXTURE_ATLAS_JSON_HASH
     )
+    this.load.atlas(
+      'party_assets',
+      'assets/images/party_assets.png',
+      'assets/images/party_assets.json',
+      Phaser.Loader.TEXTURE_ATLAS_JSON_HASH
+    )
 
     this.load.image('tile', 'assets/map/tile.png')
+    this.load.image('party-bg', 'assets/images/party-bg.png')
     this.game.load.spritesheet('slopes', 'assets/map/slopes-32.png', 32, 32)
     this.load.atlas(
       'screen_assets',
@@ -41,11 +48,16 @@ export default class extends Phaser.State {
       audioData
     )
     this.add.image(0, 0, 'preloaderBg')
-    this.txt = this.game.add.bitmapText(this.game.width / 2, 370, 'municipal', `${0}%`, 30)
+    /* this.txt = this.game.add.bitmapText(this.game.width / 2, 370, 'municipal', `${0}%`, 30)
     this.txt.anchor.set(0.5, 0)
     this.txt.align = 'center'
-    this.txt.tint = 0xff6680
-    this.loadUpdate.resetLocked = true
+    this.txt.tint = 0xff6680 */
+
+    this.txt = this.add.text(this.world.centerX, 370, '', {
+      font: '30px Municipal',
+      fill: '#ff6680',
+      align: 'center'
+    })
   }
 
   loadUpdate () {
@@ -55,5 +67,6 @@ export default class extends Phaser.State {
   render () {
     // this.txt.text = ''
     this.state.start('Game')
+    // this.state.start('Party')
   }
 }

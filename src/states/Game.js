@@ -1,10 +1,12 @@
 /* globals __DEV__ */
 import Phaser from 'phaser'
 import config from '../config'
+import { FadeIn, FadeOut } from '../utils'
 import Player from '../sprites/Player'
 import Objects from '../sprites/Objects'
 import Enemies from '../sprites/Enemies'
 import TempGuage from '../sprites/TempGuage'
+import HeatSource from '../sprites/HeatSource'
 
 export default class extends Phaser.State {
   init () {
@@ -15,12 +17,13 @@ export default class extends Phaser.State {
     this.diff = this.offsetHeight - this.worldHeight
     this.enemies = []
     this.objects = []
+    this.cubes = []
     this.playRate = 150
     this.nextPlay = 0
     this.started = false
     this.cameraPos = new Phaser.Point(0, 0)
-    this.camX = 400
-    this.camY = 0
+    this.camX = 350
+    this.camY = -200
     this.lerp = 0.1
     this.score = 0
   }
@@ -53,11 +56,13 @@ export default class extends Phaser.State {
             }
           }, this)
         }, this)
+        console.log(collisionTiles)
         this.map.setCollision(collisionTiles, true, layer.name)
+        this.mapped = config.level[config.levelCount]
         this.game.slopes.convertTilemapLayer(this.layers[layer.name], {
-          15: 'FULL',
-          21: 'HALF_BOTTOM_RIGHT',
-          20: 'HALF_BOTTOM_LEFT'
+          [this.mapped[0]]: 'FULL',
+          [this.mapped[1]]: 'HALF_BOTTOM_RIGHT',
+          [this.mapped[2]]: 'HALF_BOTTOM_LEFT'
         })
       }
     }, this)
@@ -66,18 +71,18 @@ export default class extends Phaser.State {
 
     const cubes = this.map.objects['cube']
     cubes.forEach(obj => {
-      this.objects.push(new Objects(this.game, obj.x, obj.y - this.diff, 'cube', this.sfx))
+      this.cubes.push(new Objects(this.game, obj.x, obj.y - this.diff, 'cube', this.sfx))
     })
 
     const radiators = this.map.objects['radiator']
     radiators.forEach(obj => {
-      this.objects.push(new Objects(this.game, obj.x, obj.y - this.diff, 'radiator', this.sfx))
+      this.objects.push(new HeatSource(this.game, obj.x, obj.y - this.diff, 'radiator', this.sfx))
     })
 
     const bbq = this.map.objects['bbq']
     bbq &&
       bbq.forEach(obj => {
-        this.objects.push(new Objects(this.game, obj.x, obj.y - this.diff, 'bbq', this.sfx))
+        this.objects.push(new HeatSource(this.game, obj.x, obj.y - this.diff, 'bbq', this.sfx))
       })
 
     const enemies = this.map.objects['enemies']
@@ -89,15 +94,14 @@ export default class extends Phaser.State {
 
     const playerObj = this.map.objects['player'][0]
     this.player = new Player(this.game, playerObj.x, playerObj.y - this.diff, 'penguin', this.sfx)
-    this.camY = -200
+    /* this.camY = -200
     this.cameraPos.setTo(
       (this.player.x + this.camX - this.cameraPos.x) * this.lerp,
       (this.player.y + this.camY - this.cameraPos.y) * this.lerp
-    )
-    this.game.time.events.add(100, () => this.game.camera.follow(null))
+    ) */
     // this.player.body.velocity.y = -100
     this.game.slopes.enable(this.player)
-    // this.game.camera.follow(this.player)
+    // this.game.camera.follow(this.player, null, 0.1, 0.1, this.camX, -200)
     this.header = this.add.image(this.game.width / 2, -20, 'screen_assets', 'logo')
     this.header.anchor.set(0.5, 0)
     this.header.fixedToCamera = true
@@ -112,7 +116,7 @@ export default class extends Phaser.State {
     this.cube.anchor.set(1, 0)
     this.cube.scale.set(0.45)
 
-    this.scoreTxt = this.game.add.bitmapText(
+    /* this.scoreTxt = this.game.add.bitmapText(
       this.game.width - 20,
       20,
       'municipal-points',
@@ -122,7 +126,14 @@ export default class extends Phaser.State {
     this.scoreTxt.align = 'right'
     this.scoreTxt.anchor.set(1, 0)
     this.scoreTxt.fixedToCamera = true
-    this.scoreTxt.tint = 0x194cf3
+    this.scoreTxt.tint = 0x194cf3 */
+    this.scoreTxt = this.add.text(this.game.width - 20, 20, `${this.score}`, {
+      font: '36px Municipal',
+      fill: '#194cf3',
+      align: 'right'
+    })
+    this.scoreTxt.anchor.set(1, 0)
+    this.scoreTxt.fixedToCamera = true
     this.fpsText = this.game.add.text(50, 50, '', { font: '16px Arial', fill: '#ff0000' })
     this.fpsText.fixedToCamera = true
     this.started = true
@@ -135,20 +146,21 @@ export default class extends Phaser.State {
 
     this.game.camera.focusOnXY(this.cameraPos.x, this.cameraPos.y)
     if (this.started) {
-      this.physics.arcade.overlap(this.player, this.objects, this.objectCollide, null, this)
+      this.physics.arcade.overlap(this.player, this.cubes, this.cubeCollide, null, this)
+      this.physics.arcade.collide(this.player, this.objects, this.objectCollide, null, this)
       this.physics.arcade.collide(this.player, this.enemies, this.enemyCollide, null, this)
       if (config.levelCount < 4) {
         if (this.player.x > this.worldWidth - 300) {
           this.started = false
           this.tempguage.stop()
-          config.levelCount++
           this.sfx.stop('claps')
-          this.state.start('Game')
+          if (this.tempguage.currentFrame <= 49) this.state.start('Party', FadeOut, FadeIn)
         }
       }
       if (this.tempguage.currentFrame === 99) {
         this.tempguage.stop()
         this.started = false
+        this.sfx.stop()
         this.state.start('Game')
       }
     }
@@ -157,22 +169,24 @@ export default class extends Phaser.State {
   }
 
   collide (player, obj) {
-    if (obj.index === 21) {
+    const slopeSpeed = player.speed / 10
+    if (obj.index === this.mapped[1]) {
       player.onStairs = true
       this.playLoop('upstairs')
-      player.body.velocity.x += 20
+      player.body.velocity.x += slopeSpeed
       player.angle = -10
-    } else if (obj.index === 20) {
+    } else if (obj.index === this.mapped[2]) {
       player.onStairs = true
       this.playLoop('downstairs')
       player.angle = 10
     } else {
       if (player.onStairs) {
         player.angle = 0
-        player.body.velocity.x = config.json.difficulty[config.difficulty].speed
+        player.body.velocity.x = player.speed
         player.onStairs = false
       }
     }
+    player.body.bounce.set(0)
     player.canJump = player.body.touching.down
   }
 
@@ -183,11 +197,20 @@ export default class extends Phaser.State {
     }
   }
 
+  cubeCollide (player, obj) {
+    this.tempguage.tempDrop(obj.points)
+    this.score += obj.points
+    this.scoreTxt.text = this.score
+    obj.hit()
+  }
+
   objectCollide (player, obj) {
-    if (obj.type === 'cube' || obj.body.touching.up) {
+    if (obj.body.touching.up) {
       this.tempguage.tempDrop(obj.points)
       this.score += obj.points
       this.scoreTxt.text = this.score
+      player.body.velocity.y = -player.speed * 1.5
+      player.body.velocity.x += player.speed / 10
       obj.hit()
     }
   }

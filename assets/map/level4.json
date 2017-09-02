@@ -91,7 +91,7 @@
                  "type":"",
                  "visible":true,
                  "width":217,
-                 "x":3056,
+                 "x":3424,
                  "y":1152
                 }, 
                 {
@@ -139,7 +139,7 @@
                  "type":"",
                  "visible":true,
                  "width":217,
-                 "x":5080,
+                 "x":4912,
                  "y":768
                 }, 
                 {
@@ -265,86 +265,6 @@
                  "y":1160
                 }, 
                 {
-                 "gid":2147483659,
-                 "height":143,
-                 "id":84,
-                 "name":"walrus",
-                 "properties":
-                    {
-                     "flipped":true
-                    },
-                 "propertytypes":
-                    {
-                     "flipped":"bool"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":193,
-                 "x":1688,
-                 "y":764
-                }, 
-                {
-                 "gid":11,
-                 "height":143,
-                 "id":89,
-                 "name":"walrus",
-                 "properties":
-                    {
-                     "flipped":true
-                    },
-                 "propertytypes":
-                    {
-                     "flipped":"bool"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":193,
-                 "x":3384,
-                 "y":768
-                }, 
-                {
-                 "gid":2147483659,
-                 "height":143,
-                 "id":94,
-                 "name":"walrus",
-                 "properties":
-                    {
-                     "flipped":true
-                    },
-                 "propertytypes":
-                    {
-                     "flipped":"bool"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":193,
-                 "x":5388,
-                 "y":764
-                }, 
-                {
-                 "gid":2147483659,
-                 "height":143,
-                 "id":101,
-                 "name":"walrus",
-                 "properties":
-                    {
-                     "flipped":true
-                    },
-                 "propertytypes":
-                    {
-                     "flipped":"bool"
-                    },
-                 "rotation":0,
-                 "type":"",
-                 "visible":true,
-                 "width":193,
-                 "x":8234,
-                 "y":763
-                }, 
-                {
                  "gid":8,
                  "height":106,
                  "id":112,
@@ -381,8 +301,8 @@
                  "type":"",
                  "visible":true,
                  "width":101,
-                 "x":1973,
-                 "y":383
+                 "x":1592,
+                 "y":376
                 }, 
                 {
                  "gid":2147483656,
@@ -401,8 +321,8 @@
                  "type":"",
                  "visible":true,
                  "width":101,
-                 "x":3086,
-                 "y":303
+                 "x":2872,
+                 "y":288
                 }, 
                 {
                  "gid":2147483656,
@@ -421,7 +341,7 @@
                  "type":"",
                  "visible":true,
                  "width":101,
-                 "x":3949,
+                 "x":4328,
                  "y":384
                 }, 
                 {
@@ -441,8 +361,8 @@
                  "type":"",
                  "visible":true,
                  "width":101,
-                 "x":5446,
-                 "y":328
+                 "x":5336,
+                 "y":360
                 }, 
                 {
                  "gid":2147483656,
@@ -481,8 +401,8 @@
                  "type":"",
                  "visible":true,
                  "width":101,
-                 "x":9033,
-                 "y":241
+                 "x":9128,
+                 "y":240
                 }, 
                 {
                  "gid":2147483656,
@@ -491,7 +411,7 @@
                  "name":"gull",
                  "properties":
                     {
-                     "flipped":false
+                     "flipped":true
                     },
                  "propertytypes":
                     {
@@ -501,8 +421,88 @@
                  "type":"",
                  "visible":true,
                  "width":101,
-                 "x":10580,
+                 "x":10336,
                  "y":376
+                }, 
+                {
+                 "gid":2147483659,
+                 "height":143,
+                 "id":155,
+                 "name":"walrus",
+                 "properties":
+                    {
+                     "flipped":true
+                    },
+                 "propertytypes":
+                    {
+                     "flipped":"bool"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":193,
+                 "x":8234,
+                 "y":763
+                }, 
+                {
+                 "gid":2147483659,
+                 "height":143,
+                 "id":156,
+                 "name":"walrus",
+                 "properties":
+                    {
+                     "flipped":true
+                    },
+                 "propertytypes":
+                    {
+                     "flipped":"bool"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":193,
+                 "x":1576,
+                 "y":764
+                }, 
+                {
+                 "gid":2147483659,
+                 "height":143,
+                 "id":157,
+                 "name":"walrus",
+                 "properties":
+                    {
+                     "flipped":true
+                    },
+                 "propertytypes":
+                    {
+                     "flipped":"bool"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":193,
+                 "x":5164,
+                 "y":764
+                }, 
+                {
+                 "gid":11,
+                 "height":143,
+                 "id":158,
+                 "name":"walrus",
+                 "properties":
+                    {
+                     "flipped":true
+                    },
+                 "propertytypes":
+                    {
+                     "flipped":"bool"
+                    },
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":193,
+                 "x":3328,
+                 "y":768
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -523,7 +523,7 @@
                  "type":"",
                  "visible":true,
                  "width":178,
-                 "x":1117,
+                 "x":1376,
                  "y":385
                 }, 
                 {
@@ -535,8 +535,8 @@
                  "type":"",
                  "visible":true,
                  "width":178,
-                 "x":3215,
-                 "y":385
+                 "x":3360,
+                 "y":384
                 }, 
                 {
                  "gid":14,
@@ -941,7 +941,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":3736,
+                 "x":3880,
                  "y":1032
                 }, 
                 {
@@ -953,7 +953,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":3822.44,
+                 "x":3966.44,
                  "y":1032
                 }, 
                 {
@@ -1205,7 +1205,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":1444,
+                 "x":1292,
                  "y":615
                 }, 
                 {
@@ -1217,7 +1217,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":1532,
+                 "x":1380,
                  "y":615
                 }, 
                 {
@@ -1229,7 +1229,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":1356,
+                 "x":1204,
                  "y":615
                 }, 
                 {
@@ -1241,7 +1241,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":2032,
+                 "x":1944,
                  "y":705
                 }, 
                 {
@@ -1277,7 +1277,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":3736,
+                 "x":3808,
                  "y":688
                 }, 
                 {
@@ -1289,7 +1289,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":3824,
+                 "x":3896,
                  "y":688
                 }, 
                 {
@@ -1313,8 +1313,8 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":5754,
-                 "y":619
+                 "x":5866,
+                 "y":715
                 }, 
                 {
                  "gid":1,
@@ -1325,8 +1325,8 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":5666,
-                 "y":619
+                 "x":5778,
+                 "y":715
                 }, 
                 {
                  "gid":1,
@@ -1469,8 +1469,8 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":1328,
-                 "y":364
+                 "x":1672,
+                 "y":272
                 }, 
                 {
                  "gid":1,
@@ -1481,8 +1481,8 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":1572,
-                 "y":278
+                 "x":1760,
+                 "y":272
                 }, 
                 {
                  "gid":1,
@@ -1505,8 +1505,8 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":2928,
-                 "y":370
+                 "x":2656,
+                 "y":344
                 }, 
                 {
                  "gid":1,
@@ -1517,8 +1517,8 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":3404,
-                 "y":376
+                 "x":3616,
+                 "y":368
                 }, 
                 {
                  "gid":1,
@@ -1577,7 +1577,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":5167,
+                 "x":5072,
                  "y":352
                 }, 
                 {
@@ -1740,7 +1740,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":154,
+ "nextobjectid":159,
  "orientation":"orthogonal",
  "renderorder":"left-down",
  "tiledversion":"1.0.2",

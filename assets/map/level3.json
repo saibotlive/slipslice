@@ -91,7 +91,7 @@
                  "type":"",
                  "visible":true,
                  "width":217,
-                 "x":3056,
+                 "x":3424,
                  "y":1152
                 }, 
                 {
@@ -139,7 +139,7 @@
                  "type":"",
                  "visible":true,
                  "width":217,
-                 "x":5080,
+                 "x":4912,
                  "y":768
                 }, 
                 {
@@ -281,7 +281,7 @@
                  "type":"",
                  "visible":true,
                  "width":193,
-                 "x":1688,
+                 "x":1576,
                  "y":764
                 }, 
                 {
@@ -301,7 +301,7 @@
                  "type":"",
                  "visible":true,
                  "width":193,
-                 "x":3384,
+                 "x":3328,
                  "y":768
                 }, 
                 {
@@ -321,7 +321,7 @@
                  "type":"",
                  "visible":true,
                  "width":193,
-                 "x":5388,
+                 "x":5164,
                  "y":764
                 }, 
                 {
@@ -344,6 +344,16 @@
                  "x":8234,
                  "y":763
                 }],
+         "opacity":1,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "name":"bbq",
+         "objects":[],
          "opacity":1,
          "type":"objectgroup",
          "visible":true,
@@ -699,7 +709,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":3736,
+                 "x":3880,
                  "y":1032
                 }, 
                 {
@@ -711,7 +721,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":3822.44,
+                 "x":3966.44,
                  "y":1032
                 }, 
                 {
@@ -963,7 +973,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":1444,
+                 "x":1292,
                  "y":615
                 }, 
                 {
@@ -975,7 +985,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":1532,
+                 "x":1380,
                  "y":615
                 }, 
                 {
@@ -987,7 +997,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":1356,
+                 "x":1204,
                  "y":615
                 }, 
                 {
@@ -999,7 +1009,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":2032,
+                 "x":1944,
                  "y":705
                 }, 
                 {
@@ -1035,7 +1045,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":3736,
+                 "x":3808,
                  "y":688
                 }, 
                 {
@@ -1047,7 +1057,7 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":3824,
+                 "x":3896,
                  "y":688
                 }, 
                 {
@@ -1071,8 +1081,8 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":5754,
-                 "y":619
+                 "x":5866,
+                 "y":715
                 }, 
                 {
                  "gid":1,
@@ -1083,8 +1093,8 @@
                  "type":"",
                  "visible":true,
                  "width":79,
-                 "x":5666,
-                 "y":619
+                 "x":5778,
+                 "y":715
                 }, 
                 {
                  "gid":1,
@@ -1225,8 +1235,8 @@
                  "type":"",
                  "visible":true,
                  "width":215,
-                 "x":144,
-                 "y":745
+                 "x":88,
+                 "y":728
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -1234,7 +1244,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":109,
+ "nextobjectid":154,
  "orientation":"orthogonal",
  "renderorder":"left-down",
  "tiledversion":"1.0.2",
