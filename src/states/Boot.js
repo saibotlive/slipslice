@@ -39,7 +39,7 @@ export default class extends Phaser.State {
     localData
       ? (config.muted = JSON.parse(localData).muted)
       : localStorage.setItem(config.localStorageName, JSON.stringify({ muted: config.muted }))
-    config.muted = JSON.parse(localData).muted
+    config.muted = localData && JSON.parse(localData).muted
     this.game.sound.mute = config.muted
 
     config.json = this.cache.getJSON('config')
