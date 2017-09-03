@@ -4,7 +4,6 @@ export const centerGameObjects = objects => {
     object.anchor.setTo(0.5)
   })
 }
-console.log('d', Phaser)
 export const FadeIn = {
   intro: true,
   duration: 300,

@@ -28,6 +28,7 @@ export default class extends Phaser.State {
 
     this.load.image('tile', 'assets/map/tile.png')
     this.load.image('bg', 'assets/images/bg.png')
+    this.load.image('pause-bg', 'assets/images/pause-bg.png')
     this.load.image('party-bg', 'assets/images/party-bg.png')
     this.load.image('game-over-bg', 'assets/images/game-over-bg.png')
     this.game.load.spritesheet('slopes', 'assets/map/slopes-32.png', 32, 32)

@@ -7,6 +7,7 @@ import Objects from '../sprites/Objects'
 import Enemies from '../sprites/Enemies'
 import TempGuage from '../sprites/TempGuage'
 import HeatSource from '../sprites/HeatSource'
+import PauseMenu from '../sprites/PauseMenu'
 
 export default class extends Phaser.State {
   init () {
@@ -36,6 +37,7 @@ export default class extends Phaser.State {
     // this.sfx.onStop.add(this.soundComplete, this)
     this.sfx.play('claps', 0.3)
     this.game.time.advancedTiming = true
+
     this.map = this.add.tilemap(`level${config.levelCount}`)
     this.map.addTilesetImage('slopes', 'slopes')
     this.world.setBounds(0, 0, this.worldWidth, this.worldHeight)
@@ -92,6 +94,13 @@ export default class extends Phaser.State {
       )
     })
 
+    this.hitArea = this.add.graphics(0, 0)
+    this.hitArea.beginFill('#ffffff', 0)
+    this.hitArea.drawRect(0, 0, this.game.width, this.game.height)
+    this.hitArea.endFill()
+    this.hitArea.fixedToCamera = true
+    this.hitArea.inputEnabled = true
+
     const playerObj = this.map.objects['player'][0]
     this.player = new Player(this.game, playerObj.x, playerObj.y - this.diff, 'penguin', this.sfx)
     /* this.camY = -200
@@ -101,13 +110,22 @@ export default class extends Phaser.State {
     ) */
     // this.player.body.velocity.y = -100
     this.game.slopes.enable(this.player)
+
     // this.game.camera.follow(this.player, null, 0.1, 0.1, this.camX, -200)
-    this.header = this.add.image(this.game.width / 2, -20, 'screen_assets', 'logo')
+    this.header = this.add.image(this.game.width / 2, -20, 'screen_assets', 'header')
     this.header.anchor.set(0.5, 0)
     this.header.fixedToCamera = true
 
     this.tempguage = new TempGuage(this.game, this.game.width / 2, 20, 'tempguage')
-    this.pausebtn = this.add.image(this.game.width - 150, 20, 'screen_assets', 'pausebtn')
+    this.pausebtn = this.add.button(
+      this.game.width - 150,
+      20,
+      'screen_assets',
+      this.onPause,
+      this,
+      'pausebtn',
+      'pausebtn'
+    )
     this.pausebtn.anchor.set(1, 0)
     this.pausebtn.fixedToCamera = true
 
@@ -137,6 +155,7 @@ export default class extends Phaser.State {
     this.fpsText = this.game.add.text(50, 50, '', { font: '16px Arial', fill: '#ff0000' })
     this.fpsText.fixedToCamera = true
     this.started = true
+    this.pausebg = new PauseMenu(this.game, 0, 0, 'pause-bg')
   }
 
   update () {
@@ -156,7 +175,7 @@ export default class extends Phaser.State {
         if (this.tempguage.currentFrame <= 49) {
           config.score = this.score
           this.state.start('Party', FadeOut, FadeIn)
-        }
+        } else this.state.start('GameOver', FadeOut, FadeIn)
       }
       if (this.tempguage.currentFrame === 99) {
         this.tempguage.stop()
@@ -167,6 +186,10 @@ export default class extends Phaser.State {
     }
 
     this.fpsText.setText(this.game.time.fps + ' FPS')
+  }
+
+  onPause () {
+    this.pausebg.pauseGame()
   }
 
   collide (player, obj) {
@@ -231,9 +254,7 @@ export default class extends Phaser.State {
     )
   }
 
-  soundComplete (snd) {
-    console.log('snd', snd)
-  }
+  addPauseMenu () {}
 
   render () {
     if (config.json.debug === true) {

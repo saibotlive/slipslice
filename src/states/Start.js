@@ -45,11 +45,9 @@ export default class extends Phaser.State {
     )
   }
   howTo = () => {
-    this.sfx.stop('party')
     this.state.start('Game')
   }
   start = () => {
-    //this.sfx.stop('party')
     this.state.start('Game')
   }
 }

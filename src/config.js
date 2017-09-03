@@ -2,6 +2,7 @@ export default {
   gameWidth: 960,
   gameHeight: 560,
   score: 0,
+  muted: false,
   totalScore: 0,
   levelCount: 1,
   difficulty: 'easy',

@@ -2,7 +2,7 @@ import Phaser from 'phaser'
 import config from '../config'
 import 'phaser-state-transition'
 import 'script-loader!phaser-arcade-slopes'
-//import 'script-loader!phaser-camera-offset'
+// import 'script-loader!phaser-camera-offset'
 import WebFont from 'webfontloader'
 
 export default class extends Phaser.State {
@@ -34,6 +34,13 @@ export default class extends Phaser.State {
     this.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL
     this.scale.pageAlignHorizontally = true
     this.scale.pageAlignVertically = true
+    const localData = localStorage.getItem(config.localStorageName)
+
+    localData
+      ? (config.muted = JSON.parse(localData).muted)
+      : localStorage.setItem(config.localStorageName, JSON.stringify({ muted: config.muted }))
+    config.muted = JSON.parse(localData).muted
+    this.game.sound.mute = config.muted
 
     config.json = this.cache.getJSON('config')
   }

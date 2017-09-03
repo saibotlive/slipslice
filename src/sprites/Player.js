@@ -21,7 +21,10 @@ export default class extends Phaser.Sprite {
     this.onStairs = false
     this.canJump = true
     this.game.add.existing(this)
-    this.game.input.onDown.add(this.handleJump, this)
+
+    const hitArea = this.game.state.states.Game.hitArea
+
+    hitArea.events.onInputDown.add(this.handleJump, this)
     this.sfx = sfx
 
     // this.animations.add('move', Phaser.Animation.generateFrameNames(asset, 0, 39, '', 4), 30, true);
