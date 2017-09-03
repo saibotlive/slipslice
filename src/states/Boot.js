@@ -2,7 +2,7 @@ import Phaser from 'phaser'
 import config from '../config'
 import 'phaser-state-transition'
 import 'script-loader!phaser-arcade-slopes'
-import 'script-loader!phaser-camera-offset'
+//import 'script-loader!phaser-camera-offset'
 import WebFont from 'webfontloader'
 
 export default class extends Phaser.State {
@@ -14,7 +14,7 @@ export default class extends Phaser.State {
   preload () {
     WebFont.load({
       custom: {
-        families: ['Municipal']
+        families: ['Municipal', 'Futura-Condensed-Medium']
       },
       active: this.fontsLoaded
     })

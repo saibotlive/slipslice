@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import config from '../config'
+import { createText } from '../utils'
 
 export default class extends Phaser.Sprite {
   constructor (game, x, y, asset, sfx) {
@@ -35,13 +36,18 @@ export default class extends Phaser.Sprite {
     this.txt.alpha = 0
     this.txt.tint = 0xffff00 */
 
-    this.txt = this.game.add.text(this.x - 20, this.y - 100, `+${this.points}`, {
-      font: '50px Municipal',
-      stroke: '#000000',
-      strokeThickness: 3,
-      fill: '#ffff00',
-      align: 'center'
-    })
+    this.txt = createText(
+      this.game,
+      this.x - 20,
+      this.y - 100,
+      `+${this.points}`,
+      50,
+      { x: 0.5, y: 0.5 },
+      config.yellow,
+      'center',
+      { fill: '#000000', width: 3 },
+      { x: -1, y: 1, fill: '#000000' }
+    )
     this.txt.alpha = 0
     this.sfx = sfx
     this.touched = false

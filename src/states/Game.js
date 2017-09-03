@@ -153,7 +153,10 @@ export default class extends Phaser.State {
         this.started = false
         this.tempguage.stop()
         this.sfx.stop('claps')
-        if (this.tempguage.currentFrame <= 49) this.state.start('Party', FadeOut, FadeIn)
+        if (this.tempguage.currentFrame <= 49) {
+          config.score = this.score
+          this.state.start('Party', FadeOut, FadeIn)
+        }
       }
       if (this.tempguage.currentFrame === 99) {
         this.tempguage.stop()
@@ -222,7 +225,7 @@ export default class extends Phaser.State {
     this.game.time.events.add(
       2000,
       () => {
-        this.state.start('Game')
+        this.state.start('GameOver', FadeOut, FadeIn)
       },
       this
     )

@@ -45,7 +45,7 @@
   </data>
  </layer>
  <objectgroup name="radiator">
-  <object id="46" gid="10" x="3056" y="1152" width="217" height="137"/>
+  <object id="46" gid="10" x="3296" y="1152" width="217" height="137"/>
   <object id="70" gid="10" x="9237" y="1152" width="217" height="137"/>
  </objectgroup>
  <objectgroup name="enemies">
@@ -88,6 +88,6 @@
   <object id="74" gid="1" x="10792" y="1040" width="79" height="79"/>
  </objectgroup>
  <objectgroup name="player">
-  <object id="8" gid="5" x="96" y="1104" width="215" height="156"/>
+  <object id="8" gid="5" x="96" y="1149" width="215" height="156"/>
  </objectgroup>
 </map>
