@@ -45,7 +45,7 @@ export default class extends Phaser.State {
     )
   }
   howTo = () => {
-    this.state.start('Game')
+    //this.state.start('Game')
   }
   start = () => {
     this.state.start('Game')
