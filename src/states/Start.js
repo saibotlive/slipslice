@@ -6,10 +6,9 @@ import Button from '../sprites/Button'
 export default class extends Phaser.State {
   init () {}
   create () {
-    this.sfx = this.add.audioSprite('sfx')
-    this.sfx.allowMultiple = true
-    // this.sfx.onStop.add(this.soundComplete, this)
-    // this.sfx.play('party', 0.8)
+    config.introMusic = this.add.audioSprite('sfx')
+    config.introMusic.play('claps', 0.3)
+
     this.add.image(0, 0, 'bg')
     this.logo = this.add.image(
       this.game.width / 2,

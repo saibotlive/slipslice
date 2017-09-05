@@ -13,6 +13,7 @@ export default class extends Phaser.State {
     this.load.tilemap('level4', './assets/map/level4.json', null, Phaser.Tilemap.TILED_JSON)
 
     this.load.image('layout', './assets/map/layout.png')
+    this.load.image('layout-close', './assets/map/layout-close.png')
     this.load.atlas(
       'assets',
       'assets/images/gameplay_assets.png',
@@ -38,8 +39,18 @@ export default class extends Phaser.State {
     this.load.image('ready3', 'assets/images/ready3.png')
     this.load.image('ready4', 'assets/images/ready4.png')
     this.load.image('pause-bg', 'assets/images/pause-bg.png')
-    this.load.image('party-bg', 'assets/images/party-bg.png')
-    this.load.image('fail1', 'assets/images/fail1.png')
+    this.load.image('party-1', 'assets/images/party-1.png')
+    this.load.image('party-2', 'assets/images/party-2.png')
+    this.load.image('party-3', 'assets/images/party-3.png')
+    this.load.image('party-4', 'assets/images/party-4.png')
+    this.load.image('complete-1', 'assets/images/complete-1.png')
+    this.load.image('complete-2', 'assets/images/complete-2.png')
+    this.load.image('complete-3', 'assets/images/complete-3.png')
+    this.load.image('complete-4', 'assets/images/complete-4.png')
+    this.load.image('fail-1', 'assets/images/fail-1.png')
+    this.load.image('fail-2', 'assets/images/fail-2.png')
+    this.load.image('fail-3', 'assets/images/fail-3.png')
+    this.load.image('fail-4', 'assets/images/fail-4.png')
     this.load.image('game-over-bg', 'assets/images/game-over-bg.png')
     this.game.load.spritesheet('slopes', 'assets/map/slopes-32.png', 32, 32)
     this.load.atlas(
@@ -81,7 +92,7 @@ export default class extends Phaser.State {
     // this.txt.text = ''
     this.state.start('Start')
     // this.state.start('Game')
-    //this.state.start('Party')
+    // this.state.start('Party')
     // this.state.start('GameOver')
   }
 }

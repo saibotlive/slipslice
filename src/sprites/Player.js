@@ -12,7 +12,7 @@ export default class extends Phaser.Sprite {
       this.hitWidth,
       this.hitHeight,
       this.width / 2,
-      this.height - this.hitHeight + 10
+      50
     )
     this.speed = config.json.difficulty[config.difficulty].speed
     this.gravity = config.json.difficulty[config.difficulty].gravity
@@ -30,12 +30,15 @@ export default class extends Phaser.Sprite {
       .toString()
       .split(asset).length
 
+    this.animations.add('move', Phaser.Animation.generateFrameNames(asset, 0, 11, '', 4), 30, true)
+
     this.animations.add(
-      'move',
-      Phaser.Animation.generateFrameNames(asset, 1, totalFrames - 1, '', 4),
+      'dizzy',
+      Phaser.Animation.generateFrameNames(asset, 12, totalFrames - 1, '', 4),
       30,
       true
     )
+    this.animations.play('move')
     // stingray.animations.add('swim', Phaser.Animation.generateFrameNames('stingray', 0, 23, '', 4), 30, true);
   }
 

@@ -34,7 +34,7 @@
       "penguins": [
         {
           "x": 806,
-          "y": 364,
+          "y": 366,
           "flipped": false,
           "fps": 25,
           "type": "dj_penguin"
@@ -115,37 +115,37 @@
       "title": "YOUR PARTY IS ICE COLD",
       "penguins": [
         {
-          "x": 806,
-          "y": 364,
+          "x": 479,
+          "y": 366,
           "flipped": false,
           "fps": 25,
           "type": "dj_penguin"
         },
         {
           "x": 280,
-          "y": 290,
+          "y": 240,
           "flipped": false,
           "fps": 25,
           "type": "slidy_penguin"
         },
         {
-          "x": 460,
+          "x": 860,
           "y": 354,
-          "flipped": false,
+          "flipped": true,
           "fps": 25,
           "type": "party_penguin"
         },
         {
-          "x": 420,
+          "x": 720,
           "y": 374,
           "flipped": false,
           "fps": 25,
           "type": "hyper_penguin"
         },
         {
-          "x": 380,
+          "x": 640,
           "y": 374,
-          "flipped": false,
+          "flipped": true,
           "fps": 25,
           "type": "jumpy_penguin"
         },
@@ -159,7 +159,7 @@
         {
           "x": 234,
           "y": 354,
-          "flipped": true,
+          "flipped": false,
           "fps": 25,
           "type": "headbanger"
         },
@@ -197,77 +197,77 @@
       "title": "YOUR PARTY IS ICE COLD",
       "penguins": [
         {
-          "x": 806,
-          "y": 364,
+          "x": 146,
+          "y": 366,
           "flipped": false,
           "fps": 25,
           "type": "dj_penguin"
         },
         {
-          "x": 280,
-          "y": 290,
+          "x": 380,
+          "y": 350,
           "flipped": false,
           "fps": 25,
           "type": "slidy_penguin"
         },
         {
-          "x": 460,
+          "x": 360,
           "y": 354,
-          "flipped": false,
+          "flipped": true,
           "fps": 25,
           "type": "party_penguin"
         },
         {
-          "x": 420,
+          "x": 920,
           "y": 374,
           "flipped": false,
           "fps": 25,
           "type": "hyper_penguin"
         },
         {
-          "x": 380,
+          "x": 500,
           "y": 374,
           "flipped": false,
           "fps": 25,
           "type": "jumpy_penguin"
         },
         {
-          "x": 521,
+          "x": 41,
           "y": 356,
           "flipped": false,
           "fps": 25,
           "type": "spinny_penguin"
         },
         {
-          "x": 234,
+          "x": 274,
           "y": 354,
           "flipped": true,
           "fps": 25,
           "type": "headbanger"
         },
         {
-          "x": 335,
+          "x": 435,
           "y": 388,
-          "flipped": false,
+          "flipped": true,
           "fps": 25,
           "type": "snappy_penguin"
         },
         {
-          "x": 620,
+          "x": 720,
           "y": 364,
-          "flipped": false,
+          "flipped": true,
           "fps": 25,
           "type": "leap_penguin"
         },
         {
-          "x": 186,
+          "x": 486,
           "y": 354,
           "flipped": false,
           "fps": 25,
           "type": "teeter_penguin"
         },
         {
-          "x": 88,
+          "x": 648,
           "y": 354,
           "flipped": false,
           "fps": 25,
@@ -279,37 +279,37 @@
       "title": "YOUR PARTY IS ICE COLD",
       "penguins": [
         {
-          "x": 806,
-          "y": 364,
+          "x": 479,
+          "y": 366,
           "flipped": false,
           "fps": 25,
           "type": "dj_penguin"
         },
         {
           "x": 280,
-          "y": 290,
+          "y": 240,
           "flipped": false,
           "fps": 25,
           "type": "slidy_penguin"
         },
         {
-          "x": 460,
+          "x": 860,
           "y": 354,
-          "flipped": false,
+          "flipped": true,
           "fps": 25,
           "type": "party_penguin"
         },
         {
-          "x": 420,
+          "x": 720,
           "y": 374,
           "flipped": false,
           "fps": 25,
           "type": "hyper_penguin"
         },
         {
-          "x": 380,
+          "x": 640,
           "y": 374,
-          "flipped": false,
+          "flipped": true,
           "fps": 25,
           "type": "jumpy_penguin"
         },
@@ -323,7 +323,7 @@
         {
           "x": 234,
           "y": 354,
-          "flipped": true,
+          "flipped": false,
           "fps": 25,
           "type": "headbanger"
         },

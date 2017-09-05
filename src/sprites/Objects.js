@@ -10,6 +10,7 @@ export default class extends Phaser.Sprite {
     this.hitHeight = 75
     this.type = asset
     this.points = config.json.items[asset].points
+    config.allTotal += this.points
     this.game.physics.enable(this, Phaser.Physics.ARCADE)
     this.body.setSize(this.hitWidth, this.hitHeight, 0, 0)
     this.game.add.existing(this)

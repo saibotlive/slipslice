@@ -22,6 +22,7 @@ export default class extends Phaser.State {
   }
 
   play = difficulty => () => {
+    config.introMusic.stop('claps')
     this.sfx.play('click')
     config.difficulty = difficulty
     this.state.start(

@@ -1,7 +1,7 @@
 /* globals __DEV__ */
 import Phaser from 'phaser'
 import config from '../config'
-import { FadeIn, FadeOut } from '../utils'
+import { FadeIn, FadeOut, createText } from '../utils'
 import Player from '../sprites/Player'
 import Objects from '../sprites/Objects'
 import Enemies from '../sprites/Enemies'
@@ -28,6 +28,7 @@ export default class extends Phaser.State {
     this.camY = -200
     this.lerp = 0.1
     this.score = 0
+    config.allTotal = 0
   }
   preload () {}
 
@@ -70,7 +71,12 @@ export default class extends Phaser.State {
       }
     }, this)
     const bgObj = this.map.objects['background'][0]
-    this.bg = this.add.image(bgObj.x, bgObj.y - this.offsetHeight, 'layout')
+
+    this.bg = this.add.image(
+      bgObj.x,
+      bgObj.y - this.offsetHeight,
+      config.levelCount > 1 ? 'layout' : 'layout-close'
+    )
 
     const finishlines = this.map.objects['finishline']
     finishlines.forEach(obj => {
@@ -183,6 +189,21 @@ export default class extends Phaser.State {
     this.pausebg = new PauseMenu(this.game, 0, 0, 'pause-bg')
     this.ready = this.add.image(0, 0, `ready${config.levelCount}`)
     this.ready.fixedToCamera = true
+    this.complete = this.add.image(0, 0, `complete-${config.levelCount}`)
+    this.complete.fixedToCamera = true
+    this.complete.alpha = 0
+    this.complete.visible = false
+    this.finalScoreTxt = createText(
+      this.game,
+      this.game.width / 2,
+      148,
+      `${config.score}!`,
+      62,
+      { x: 0, y: 0.5 },
+      config.red,
+      'left'
+    )
+    this.complete.addChild(this.finalScoreTxt)
     this.game.time.events.add(config.json.readyTime, this.startGame, this)
   }
 
@@ -202,7 +223,13 @@ export default class extends Phaser.State {
         this.sfx.stop('claps')
         config.score = this.score
         if (this.tempguage.currentFrame <= 49) {
-          this.state.start('Party', FadeOut, FadeIn)
+          this.started = false
+          this.finalScoreTxt.text = config.score
+          this.complete.visible = true
+          this.add
+            .tween(this.complete)
+            .to({ alpha: 1}, 500, Phaser.Easing.Linear.None, true)
+          this.game.time.events.add(config.json.readyTime, this.endGame, this)
         } else this.state.start('NoParty', FadeOut, FadeIn)
       }
     }
@@ -219,6 +246,10 @@ export default class extends Phaser.State {
       .tween(this.ready)
       .to({ alpha: 0, visible: false }, 500, Phaser.Easing.Linear.None, true)
     this.started = true
+  }
+
+  endGame () {
+    this.state.start('Party', FadeOut, FadeIn)
   }
 
   onPause () {
@@ -276,7 +307,7 @@ export default class extends Phaser.State {
     this.sfx.stop('claps')
     this.started = false
     this.player.body.velocity.x = 0
-    this.player.animations.play('move')
+    this.player.animations.play('dizzy')
     this.sfx.play('growl')
     this.tempguage.stop()
     this.game.time.events.add(
