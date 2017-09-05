@@ -40,18 +40,20 @@ export default class extends Phaser.State {
       'left'
     )
 
-    if (config.levelCount === 4) config.totalScore += config.score
+    if (config.levelCount === 4) {
+      config.totalScore += config.score
 
-    this.totalTxt = createText(
-      this.game,
-      600,
-      78,
-      `${config.totalScore}/${config.allTotal}`,
-      36,
-      { x: 0, y: 0.5 },
-      config.red,
-      'left'
-    )
+      this.totalTxt = createText(
+        this.game,
+        600,
+        78,
+        `${config.totalScore}/${config.allTotal}`,
+        36,
+        { x: 0, y: 0.5 },
+        config.red,
+        'left'
+      )
+    }
 
     /* this.logo = this.add.image(0, 0, 'screen_assets', 'logo')
     this.gameshakers = this.add
