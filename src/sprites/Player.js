@@ -24,6 +24,7 @@ export default class extends Phaser.Sprite {
     const hitArea = this.game.state.states.Game.hitArea
 
     hitArea.events.onInputDown.add(this.handleJump, this)
+    this.jumpBtn = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR)
     this.sfx = sfx
     const totalFrames = Object.keys(game.cache.getFrameData('assets')._frameNames)
       .toString()
@@ -36,6 +37,12 @@ export default class extends Phaser.Sprite {
       true
     )
     // stingray.animations.add('swim', Phaser.Animation.generateFrameNames('stingray', 0, 23, '', 4), 30, true);
+  }
+
+  update () {
+    if (this.jumpBtn.isDown) {
+      this.handleJump()
+    }
   }
 
   handleJump () {
