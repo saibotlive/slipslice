@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset name="tiles" tilewidth="11364" tileheight="1680" tilecount="10" columns="0">
+<tileset name="tiles" tilewidth="11364" tileheight="1680" tilecount="11" columns="0">
  <grid orientation="orthogonal" width="1" height="1"/>
  <tile id="0">
   <image width="79" height="79" source="cube.png"/>
@@ -30,5 +30,8 @@
  </tile>
  <tile id="13">
   <image width="178" height="122" source="../images/bbq.png"/>
+ </tile>
+ <tile id="14">
+  <image width="521" height="338" source="../../../../Downloads/Archive (1)/FinishLine/FINISH_LINE.png"/>
  </tile>
 </tileset>

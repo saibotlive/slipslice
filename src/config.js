@@ -8,12 +8,14 @@ export default {
   difficulty: 'easy',
   localStorageName: 'slipslice',
   level: {
-    1: [13],
-    2: [13, 19, 18],
-    3: [15, 21, 20],
-    4: [15, 21, 20]
+    1: [14],
+    2: [14, 20, 19],
+    3: [16, 22, 21],
+    4: [16, 22, 21]
   },
   red: '#ff6680',
+  dullred: '#de4567',
   darkblue: '#194cf3',
-  yellow: '#ffff00'
+  yellow: '#ffff00',
+  teal: '#5dc1b9'
 }

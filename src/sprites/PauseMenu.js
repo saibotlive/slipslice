@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
 import config from '../config'
 import Button from '../sprites/Button'
+import HowTo from '../sprites/HowTo'
 
 export default class extends Phaser.Image {
   constructor (game, x, y, asset) {
@@ -8,14 +9,22 @@ export default class extends Phaser.Image {
     this.fixedToCamera = true
     this.game.add.existing(this)
     this.visible = false
+    this.howToBtn = this.game.add.graphics(219, 140)
+    this.howToBtn.beginFill('#ffffff', 0)
+    this.howToBtn.drawRect(0, 0, 255, 274)
+    this.howToBtn.endFill()
+    this.howToBtn.inputEnabled = true
+    this.howToBtn.useHandCursor = true
+    this.howToBtn.events.onInputDown.add(this.showHowTo, this)
+
     this.soundOff = this.game.add.sprite(
-      585,
+      595,
       170,
       'screen_assets',
       config.muted ? 'sound_off0001' : 'sound_off0000'
     )
     this.soundOn = this.game.add.sprite(
-      585,
+      595,
       250,
       'screen_assets',
       config.muted ? 'sound_on0000' : 'sound_on0001'
@@ -34,36 +43,21 @@ export default class extends Phaser.Image {
       'CONTINUE',
       36
     )
+    this.howTo = new HowTo(this.game, 0, -this.game.height, 'howto1')
+    this.addChild(this.howToBtn)
     this.addChild(this.soundOff)
     this.addChild(this.soundOn)
     this.addChild(this.continueBtn)
-    this.game.input.onDown.add(this.unPause, this)
-  }
-  update () {}
-
-  unPause = () => {
-    if (
-      this.game.input.hitTest(
-        this.continueBtn,
-        this.game.input.activePointer,
-        new Phaser.Point(this.game.input.x, this.game.input.y)
-      )
-    ) {
-      this.continue()
-    } /* else if (
-      this.game.input.hitTest(
-        this.mutebutton,
-        this.game.input.activePointer,
-        new Phaser.Point(this.game.input.x, this.game.input.y)
-      )
-    ) {
-      this.onMute()
-    } */
+    this.addChild(this.howTo)
   }
 
   pauseGame () {
     this.game.paused = true
     this.visible = true
+  }
+
+  showHowTo = () => {
+    this.howTo.show()
   }
 
   mute = () => {

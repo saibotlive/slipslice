@@ -36,6 +36,7 @@
     "webpack": "^3.4.1"
   },
   "dependencies": {
+    "gsap": "^1.20.2",
     "phaser-arcade-slopes": "^0.3.0",
     "phaser-camera-offset": "^1.0.1",
     "phaser-ce": "^2.8.3",

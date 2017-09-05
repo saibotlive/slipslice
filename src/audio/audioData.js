@@ -38,32 +38,32 @@ export default {
     },
     party: {
       start: 128,
-      end: 143.36290249433105,
+      end: 144.065306122449,
       loop: true
     },
     penguin: {
-      start: 145,
-      end: 146,
+      start: 146,
+      end: 147,
       loop: false
     },
     pickup: {
-      start: 147,
-      end: 147.47380952380954,
+      start: 148,
+      end: 148.47380952380954,
       loop: false
     },
     spacebar: {
-      start: 149,
-      end: 150.98888888888888,
+      start: 150,
+      end: 151.98888888888888,
       loop: false
     },
     upstairs: {
-      start: 152,
-      end: 152.4542403628118,
+      start: 153,
+      end: 153.4542403628118,
       loop: false
     },
     whoosh: {
-      start: 154,
-      end: 154.6791836734694,
+      start: 155,
+      end: 155.6791836734694,
       loop: false
     }
   }

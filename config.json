@@ -1,23 +1,26 @@
 {
   "debug": false,
+  "objectives":
+    "I've invited my penguin pals round \nfor a party but I need my house \nn-ice and cool for them!\nHelp me by grabbing as many \nice cubes as you can. \nBRRRRILLIANT!",
   "difficulty": {
     "easy": {
       "speed": 400,
       "jump": -700,
-      "tempRise": 120,
+      "tempRise": 1000,
       "gravity": 1500
     },
     "pro": {
-      "speed": 400,
+      "speed": 600,
       "jump": -700,
-      "tempRise": 200,
+      "tempRise": 400,
       "gravity": 1500
     }
   },
+  "readyTime": 3000,
   "items": {
-    "cube": { "points": 10 },
-    "radiator": { "points": 20 },
-    "bbq": { "points": 20 }
+    "cube": { "points": 2 },
+    "radiator": { "points": 5 },
+    "bbq": { "points": 5 }
   },
   "enemies": {
     "yeti": { "hitX": 50 },
@@ -353,6 +356,20 @@
           "type": "crazy_penguin"
         }
       ]
+    }
+  },
+  "noParty": {
+    "1": {
+      "title": "YOUR PARTY IS TOO WARM"
+    },
+    "2": {
+      "title": "YOUR PARTY IS TOO WARM"
+    },
+    "3": {
+      "title": "YOUR PARTY IS TOO WARM"
+    },
+    "4": {
+      "title": "YOUR PARTY IS TOO WARM"
     }
   }
 }

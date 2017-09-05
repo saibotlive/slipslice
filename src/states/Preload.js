@@ -28,8 +28,18 @@ export default class extends Phaser.State {
 
     this.load.image('tile', 'assets/map/tile.png')
     this.load.image('bg', 'assets/images/bg.png')
+    this.load.image('objectives-bg', 'assets/images/objectives-bg.png')
+    this.load.image('howto1', 'assets/images/howto1.png')
+    const key = this.game.device.desktop ? 'howto3' : 'howto2'
+    this.load.image(key, `assets/images/${key}.png`)
+    this.load.image('difficulty-bg', 'assets/images/difficulty-bg.png')
+    this.load.image('ready1', 'assets/images/ready1.png')
+    this.load.image('ready2', 'assets/images/ready2.png')
+    this.load.image('ready3', 'assets/images/ready3.png')
+    this.load.image('ready4', 'assets/images/ready4.png')
     this.load.image('pause-bg', 'assets/images/pause-bg.png')
     this.load.image('party-bg', 'assets/images/party-bg.png')
+    this.load.image('fail1', 'assets/images/fail1.png')
     this.load.image('game-over-bg', 'assets/images/game-over-bg.png')
     this.game.load.spritesheet('slopes', 'assets/map/slopes-32.png', 32, 32)
     this.load.atlas(

@@ -19,6 +19,7 @@ export default class extends Phaser.State {
     this.enemies = []
     this.objects = []
     this.cubes = []
+    this.finishlines = []
     this.playRate = 150
     this.nextPlay = 0
     this.started = false
@@ -35,7 +36,7 @@ export default class extends Phaser.State {
     this.sfx = this.add.audioSprite('sfx')
     this.sfx.allowMultiple = true
     // this.sfx.onStop.add(this.soundComplete, this)
-    this.sfx.play('claps', 0.3)
+
     this.game.time.advancedTiming = true
 
     this.map = this.add.tilemap(`level${config.levelCount}`)
@@ -70,6 +71,12 @@ export default class extends Phaser.State {
     }, this)
     const bgObj = this.map.objects['background'][0]
     this.bg = this.add.image(bgObj.x, bgObj.y - this.offsetHeight, 'layout')
+
+    const finishlines = this.map.objects['finishline']
+    finishlines.forEach(obj => {
+      const finishline = this.add.image(obj.x, obj.y - this.diff, 'assets', 'finishline')
+      finishline.anchor.set(0, 1)
+    })
 
     const cubes = this.map.objects['cube']
     cubes.forEach(obj => {
@@ -154,8 +161,29 @@ export default class extends Phaser.State {
     this.scoreTxt.fixedToCamera = true
     this.fpsText = this.game.add.text(50, 50, '', { font: '16px Arial', fill: '#ff0000' })
     this.fpsText.fixedToCamera = true
-    this.started = true
+
+    this.gameshakers = this.add.image(
+      10,
+      this.game.height - 10,
+      'screen_assets',
+      'gameshakers_logo'
+    )
+    this.gameshakers.anchor.set(0, 1)
+    this.gameshakers.fixedToCamera = true
+
+    this.nick = this.add.image(
+      this.game.width - 10,
+      this.game.height - 10,
+      'screen_assets',
+      'nick_logo'
+    )
+    this.nick.anchor.set(1, 1)
+    this.nick.fixedToCamera = true
+
     this.pausebg = new PauseMenu(this.game, 0, 0, 'pause-bg')
+    this.ready = this.add.image(0, 0, `ready${config.levelCount}`)
+    this.ready.fixedToCamera = true
+    this.game.time.events.add(config.json.readyTime, this.startGame, this)
   }
 
   update () {
@@ -164,28 +192,33 @@ export default class extends Phaser.State {
     this.cameraPos.y += (this.player.y + this.camY - this.cameraPos.y) * this.lerp
 
     this.game.camera.focusOnXY(this.cameraPos.x, this.cameraPos.y)
+
     if (this.started) {
       this.physics.arcade.overlap(this.player, this.cubes, this.cubeCollide, null, this)
       this.physics.arcade.collide(this.player, this.objects, this.objectCollide, null, this)
       this.physics.arcade.collide(this.player, this.enemies, this.enemyCollide, null, this)
       if (this.player.x > this.worldWidth - 300) {
-        this.started = false
         this.tempguage.stop()
         this.sfx.stop('claps')
+        config.score = this.score
         if (this.tempguage.currentFrame <= 49) {
-          config.score = this.score
           this.state.start('Party', FadeOut, FadeIn)
-        } else this.state.start('GameOver', FadeOut, FadeIn)
-      }
-      if (this.tempguage.currentFrame === 99) {
-        this.tempguage.stop()
-        this.started = false
-        this.sfx.stop()
-        this.state.start('Game')
+        } else this.state.start('NoParty', FadeOut, FadeIn)
       }
     }
 
     this.fpsText.setText(this.game.time.fps + ' FPS')
+  }
+
+  startGame () {
+    this.sfx.play('claps', 0.3)
+    this.player.body.velocity.x = this.player.speed
+    this.player.body.gravity.y = this.player.gravity
+    this.tempguage.timer.start()
+    this.add
+      .tween(this.ready)
+      .to({ alpha: 0, visible: false }, 500, Phaser.Easing.Linear.None, true)
+    this.started = true
   }
 
   onPause () {
@@ -240,9 +273,10 @@ export default class extends Phaser.State {
   }
 
   enemyCollide (player, enm) {
-    this.started = false
     this.sfx.stop('claps')
+    this.started = false
     this.player.body.velocity.x = 0
+    this.player.animations.play('move')
     this.sfx.play('growl')
     this.tempguage.stop()
     this.game.time.events.add(

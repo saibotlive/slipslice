@@ -14,14 +14,16 @@ export default class extends Phaser.Sprite {
     this.timer = game.time.create(false)
     this.timer.loop(config.json.difficulty[config.difficulty].tempRise, this.tempRise, this)
     this.currentFrame = 50
-    //this.game.time.events.add(2000, this.timer.start, this);
-    this.timer.start()
+    // this.game.time.events.add(2000, this.timer.start, this);
     // this.animations.add('move', [0, 29], 30, true)
     // this.animations.play('move')
   }
 
   tempRise () {
-    this.currentFrame++
+    if (this.currentFrame < 99) {
+      this.currentFrame++
+      this.currentFrame = this.currentFrame > 99 ? 99 : this.currentFrame
+    }
     this.frameName = this.allFrames[this.currentFrame]
   }
 

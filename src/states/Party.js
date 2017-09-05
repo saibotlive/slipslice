@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
 import config from '../config'
-import { createText, FadeIn, FadeOut } from '../utils'
+import { createText } from '../utils'
 import Button from '../sprites/Button'
 import PartyPenguin from '../sprites/PartyPenguin'
 
@@ -48,7 +48,7 @@ export default class extends Phaser.State {
       .image(10, this.game.height - 10, 'screen_assets', 'gameshakers_logo')
       .anchor.set(0, 1)
 
-    this.gameshakers = this.add
+    this.nick = this.add
       .image(this.game.width - 10, this.game.height - 10, 'screen_assets', 'nick_logo')
       .anchor.set(1, 1)
 
@@ -60,18 +60,30 @@ export default class extends Phaser.State {
 
   retry = () => {
     this.sfx.stop('party')
-    this.state.start('Game')
+    this.state.start(
+      'Game',
+      Phaser.Plugin.StateTransition.Out.SlideLeft,
+      Phaser.Plugin.StateTransition.In.SlideLeft
+    )
   }
   home = () => {
     this.sfx.stop('party')
     config.totalScore = 0
     config.levelCount = 1
-    this.state.start('Start')
+    this.state.start(
+      'Start',
+      Phaser.Plugin.StateTransition.Out.SlideLeft,
+      Phaser.Plugin.StateTransition.In.SlideLeft
+    )
   }
   continue = () => {
     this.sfx.stop('party')
     config.totalScore += config.score
     config.levelCount++
-    this.state.start('Game')
+    this.state.start(
+      'Game',
+      Phaser.Plugin.StateTransition.Out.SlideLeft,
+      Phaser.Plugin.StateTransition.In.SlideLeft
+    )
   }
 }

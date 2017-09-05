@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
 import config from '../config'
-import { centerGameObjects } from '../utils'
+import HowTo from '../sprites/HowTo'
 import Button from '../sprites/Button'
 
 export default class extends Phaser.State {
@@ -29,7 +29,7 @@ export default class extends Phaser.State {
       this.game,
       170,
       490,
-      this.howTo,
+      this.showHowTo,
       'HOW TO',
       36,
       new Phaser.Point(0, 1)
@@ -43,11 +43,18 @@ export default class extends Phaser.State {
       36,
       new Phaser.Point(1, 1)
     )
+    this.howTo = new HowTo(this.game, 0, -this.game.height, 'howto1')
   }
-  howTo = () => {
-    //this.state.start('Game')
+
+  showHowTo = () => {
+    this.howTo.show()
   }
+
   start = () => {
-    this.state.start('Game')
+    this.state.start(
+      'Objectives',
+      Phaser.Plugin.StateTransition.Out.SlideLeft,
+      Phaser.Plugin.StateTransition.In.SlideLeft
+    )
   }
 }
