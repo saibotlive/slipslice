@@ -4,7 +4,8 @@
   "private": true,
   "engines": {
     "node": "6.10.3",
-    "npm": "5.3.0"
+    "npm": "5.3.0",
+    "yarn": "^0.28.4"
   },
   "description": "",
   "author": "leandro cabrera <leandcabrera@gmail.com>",
