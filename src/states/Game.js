@@ -222,13 +222,12 @@ export default class extends Phaser.State {
         this.tempguage.stop()
         this.sfx.stop('claps')
         config.score = this.score
+        config.temp = this.tempguage.currentFrame
         if (this.tempguage.currentFrame <= 49) {
           this.started = false
           this.finalScoreTxt.text = config.score
           this.complete.visible = true
-          this.add
-            .tween(this.complete)
-            .to({ alpha: 1}, 500, Phaser.Easing.Linear.None, true)
+          this.add.tween(this.complete).to({ alpha: 1 }, 500, Phaser.Easing.Linear.None, true)
           this.game.time.events.add(config.json.readyTime, this.endGame, this)
         } else this.state.start('NoParty', FadeOut, FadeIn)
       }

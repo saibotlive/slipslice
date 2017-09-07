@@ -6,7 +6,6 @@ export default class extends Phaser.State {
   init () {}
 
   preload () {
-    this.load.tilemap('map', './assets/map/slipslice.json', null, Phaser.Tilemap.TILED_JSON)
     this.load.tilemap('level1', './assets/map/level1.json', null, Phaser.Tilemap.TILED_JSON)
     this.load.tilemap('level2', './assets/map/level2.json', null, Phaser.Tilemap.TILED_JSON)
     this.load.tilemap('level3', './assets/map/level3.json', null, Phaser.Tilemap.TILED_JSON)
