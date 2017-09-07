@@ -16,11 +16,14 @@ export default class extends Phaser.State {
     partyData.forEach(penguin => {
       const pp = new PartyPenguin(this.game, penguin.x, penguin.y, penguin.type, penguin)
     })
+    const chilled = config.json.party[`${config.levelCount}`].chilled
+    const iceCold = config.json.party[`${config.levelCount}`].icecold
+    const msg = config.temp <= iceCold.score ? iceCold.title : chilled.title
     this.txt = createText(
       this.game,
       this.game.width / 2,
       370,
-      config.json.party[config.levelCount].title,
+      msg,
       60,
       { x: 0.5, y: 0 },
       '#ffffff',

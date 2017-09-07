@@ -3,6 +3,7 @@ export default {
   gameHeight: 560,
   introMusic: '',
   score: 0,
+  temp: 0,
   muted: false,
   totalScore: 0,
   allTotal: 0,

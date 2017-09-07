@@ -6,13 +6,13 @@
     "easy": {
       "speed": 400,
       "jump": -700,
-      "tempRise": 1000,
+      "tempRise": 1200,
       "gravity": 1500
     },
     "pro": {
       "speed": 600,
       "jump": -700,
-      "tempRise": 400,
+      "tempRise": 900,
       "gravity": 1500
     }
   },
@@ -30,7 +30,8 @@
   },
   "party": {
     "1": {
-      "title": "YOUR PARTY IS ICE COLD",
+      "icecold": {"score":24, "title": "YOUR PARTY IS ICE COLD"},
+      "chilled": {"score":49, "title": "YOUR PARTY IS CHILLED"},
       "penguins": [
         {
           "x": 806,
@@ -112,7 +113,8 @@
       ]
     },
     "2": {
-      "title": "YOUR PARTY IS ICE COLD",
+      "icecold": {"score":24, "title": "YOUR PARTY IS ICE COLD"},
+      "chilled": {"score":49, "title": "YOUR PARTY IS CHILLED"},
       "penguins": [
         {
           "x": 479,
@@ -194,7 +196,8 @@
       ]
     },
     "3": {
-      "title": "YOUR PARTY IS ICE COLD",
+      "icecold": {"score":24, "title": "YOUR PARTY IS ICE COLD"},
+      "chilled": {"score":49, "title": "YOUR PARTY IS CHILLED"},
       "penguins": [
         {
           "x": 146,
@@ -276,7 +279,8 @@
       ]
     },
     "4": {
-      "title": "YOUR PARTY IS ICE COLD",
+      "icecold": {"score":24, "title": "YOUR PARTY IS ICE COLD"},
+      "chilled": {"score":49, "title": "YOUR PARTY IS CHILLED"},
       "penguins": [
         {
           "x": 479,
@@ -360,16 +364,20 @@
   },
   "noParty": {
     "1": {
-      "title": "YOUR PARTY IS TOO WARM"
+      "toohot": {"score":74, "title": "YOUR PARTY IS TOO HOT"},
+      "warm": {"score":49, "title": "YOUR PARTY IS TOO WARM"}
     },
     "2": {
-      "title": "YOUR PARTY IS TOO WARM"
+      "toohot": {"score":74, "title": "YOUR PARTY IS TOO HOT"},
+      "warm": {"score":49, "title": "YOUR PARTY IS TOO WARM"}
     },
     "3": {
-      "title": "YOUR PARTY IS TOO WARM"
+      "toohot": {"score":74, "title": "YOUR PARTY IS TOO HOT"},
+      "warm": {"score":49, "title": "YOUR PARTY IS TOO WARM"}
     },
     "4": {
-      "title": "YOUR PARTY IS TOO WARM"
+      "toohot": {"score":74, "title": "YOUR PARTY IS TOO HOT"},
+      "warm": {"score":49, "title": "YOUR PARTY IS TOO WARM"}
     }
   }
 }

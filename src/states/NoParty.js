@@ -8,11 +8,14 @@ export default class extends Phaser.State {
   create () {
     // this.sfx = this.add.audioSprite('sfx')
     this.add.image(0, 0, `fail-${config.levelCount}`)
+    const warm = config.json.noParty[`${config.levelCount}`].warm
+    const tooHot = config.json.noParty[`${config.levelCount}`].toohot
+    const msg = config.temp >= tooHot.score ? tooHot.title : warm.title
     this.txt = createText(
       this.game,
       this.game.width / 2,
       370,
-      config.json.noParty[config.levelCount].title,
+      msg,
       60,
       { x: 0.5, y: 0 },
       '#ffffff',
