@@ -7,14 +7,14 @@ export default {
   muted: false,
   totalScore: 0,
   allTotal: 0,
-  levelCount: 1,
+  levelCount: 2,
   difficulty: 'easy',
   localStorageName: 'slipslice',
   level: {
-    1: [15],
-    2: [14, 20, 19],
-    3: [16, 22, 21],
-    4: [16, 22, 21]
+    1: [1],
+    2: [1, 7, 6],
+    3: [1, 7, 6],
+    4: [1, 7, 6]
   },
   red: '#ff6680',
   dullred: '#de4567',

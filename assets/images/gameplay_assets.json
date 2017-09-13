@@ -480,9 +480,17 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":225,"h":137},
 	"sourceSize": {"w":225,"h":137}
 },
+"revolve":
+{
+	"frame": {"x":704,"y":719,"w":90,"h":91},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":90,"h":91},
+	"sourceSize": {"w":90,"h":91}
+},
 "walrus0000":
 {
-	"frame": {"x":704,"y":719,"w":152,"h":109},
+	"frame": {"x":795,"y":719,"w":152,"h":109},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":152,"h":110},
@@ -490,7 +498,7 @@
 },
 "walrus0001":
 {
-	"frame": {"x":857,"y":719,"w":152,"h":109},
+	"frame": {"x":948,"y":719,"w":152,"h":109},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":152,"h":110},
@@ -498,7 +506,7 @@
 },
 "walrus0002":
 {
-	"frame": {"x":1010,"y":719,"w":151,"h":109},
+	"frame": {"x":1101,"y":719,"w":151,"h":109},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":152,"h":110},
@@ -506,7 +514,7 @@
 },
 "walrus0003":
 {
-	"frame": {"x":1162,"y":719,"w":149,"h":109},
+	"frame": {"x":1253,"y":719,"w":149,"h":109},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":152,"h":110},
@@ -514,7 +522,7 @@
 },
 "walrus0004":
 {
-	"frame": {"x":1312,"y":719,"w":149,"h":109},
+	"frame": {"x":1403,"y":719,"w":149,"h":109},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":152,"h":110},
@@ -522,7 +530,7 @@
 },
 "walrus0005":
 {
-	"frame": {"x":1462,"y":719,"w":148,"h":110},
+	"frame": {"x":1553,"y":719,"w":148,"h":110},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":152,"h":110},
@@ -530,7 +538,7 @@
 },
 "walrus0006":
 {
-	"frame": {"x":1611,"y":719,"w":147,"h":110},
+	"frame": {"x":1702,"y":719,"w":147,"h":110},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":152,"h":110},
@@ -538,7 +546,7 @@
 },
 "walrus0007":
 {
-	"frame": {"x":1759,"y":719,"w":147,"h":110},
+	"frame": {"x":1850,"y":719,"w":147,"h":110},
 	"rotated": false,
 	"trimmed": true,
 	"spriteSourceSize": {"x":0,"y":0,"w":152,"h":110},

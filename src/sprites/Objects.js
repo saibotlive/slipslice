@@ -66,6 +66,7 @@ export default class extends Phaser.Sprite {
         this.txt.destroy()
       }, this)
       this.type === 'cube' ? this.destroy() : (this.frameName = `${this.type}0001`)
+      this.touched = true
     }
   }
 

@@ -7,24 +7,27 @@ import Objects from '../sprites/Objects'
 import Enemies from '../sprites/Enemies'
 import TempGuage from '../sprites/TempGuage'
 import HeatSource from '../sprites/HeatSource'
+import Revolve from '../sprites/Revolve'
 import PauseMenu from '../sprites/PauseMenu'
 
 export default class extends Phaser.State {
   init () {
     this.physics.startSystem(Phaser.Physics.ARCADE)
-    this.worldWidth = 11364
+    this.worldWidth = 22728
     this.worldHeight = 1680
     this.offsetHeight = 1696
     this.diff = this.offsetHeight - this.worldHeight
     this.enemies = []
     this.objects = []
     this.cubes = []
+    this.revolves = []
     this.finishlines = []
     this.playRate = 150
     this.nextPlay = 0
     this.started = false
     this.cameraPos = new Phaser.Point(0, 0)
     this.camX = 350
+    this.camR = -350
     this.camY = -200
     this.lerp = 0.1
     this.score = 0
@@ -60,7 +63,7 @@ export default class extends Phaser.State {
             }
           }, this)
         }, this)
-        console.log(collisionTiles)
+        console.log('tiles', collisionTiles)
         this.map.setCollision(collisionTiles, true, layer.name)
         this.mapped = config.level[config.levelCount]
         this.game.slopes.convertTilemapLayer(this.layers[layer.name], {
@@ -99,6 +102,20 @@ export default class extends Phaser.State {
       bbq.forEach(obj => {
         this.objects.push(new HeatSource(this.game, obj.x, obj.y - this.diff, 'bbq', this.sfx))
       })
+
+    const revolves = this.map.objects['revolve']
+    revolves.forEach(obj => {
+      this.revolves.push(
+        new Revolve(
+          this.game,
+          obj.x,
+          obj.y - this.diff,
+          'revolve',
+          this.sfx,
+          obj.properties.reverse
+        )
+      )
+    })
 
     const enemies = this.map.objects['enemies']
     enemies.forEach(obj => {
@@ -209,13 +226,16 @@ export default class extends Phaser.State {
 
   update () {
     this.physics.arcade.collide(this.player, this.layers['collision'], this.collide, null, this)
-    this.cameraPos.x += (this.player.x + this.camX - this.cameraPos.x) * this.lerp
+    this.cameraPos.x +=
+      (this.player.x + (this.player.scale.x > 0 ? this.camX : this.camR) - this.cameraPos.x) *
+      this.lerp
     this.cameraPos.y += (this.player.y + this.camY - this.cameraPos.y) * this.lerp
 
     this.game.camera.focusOnXY(this.cameraPos.x, this.cameraPos.y)
 
     if (this.started) {
       this.physics.arcade.overlap(this.player, this.cubes, this.cubeCollide, null, this)
+      this.physics.arcade.overlap(this.player, this.revolves, this.revolveCollide, null, this)
       this.physics.arcade.collide(this.player, this.objects, this.objectCollide, null, this)
       this.physics.arcade.collide(this.player, this.enemies, this.enemyCollide, null, this)
       if (this.player.x > this.worldWidth - 300) {
@@ -260,7 +280,7 @@ export default class extends Phaser.State {
     if (obj.index === this.mapped[1]) {
       player.onStairs = true
       this.playLoop('upstairs')
-      player.body.velocity.x += slopeSpeed
+      player.body.velocity.x += slopeSpeed * player.scale.x
       player.angle = -10
     } else if (obj.index === this.mapped[2]) {
       player.onStairs = true
@@ -269,7 +289,7 @@ export default class extends Phaser.State {
     } else {
       if (player.onStairs) {
         player.angle = 0
-        player.body.velocity.x = player.speed
+        player.body.velocity.x = player.speed * player.scale.x
         player.onStairs = false
       }
     }
@@ -294,12 +314,18 @@ export default class extends Phaser.State {
   objectCollide (player, obj) {
     if (obj.body.touching.up) {
       this.tempguage.tempDrop(obj.points)
-      this.score += obj.points
+      if (!obj.touched) this.score += obj.points
+      console.log('toouched');
       this.scoreTxt.text = this.score
       player.body.velocity.y = -player.speed * 1.5
-      player.body.velocity.x += player.speed / 10
+      player.body.velocity.x += player.speed / 10 * player.scale.x
       obj.hit()
     }
+  }
+
+  revolveCollide (player, obj) {
+    player.body.velocity.x = player.speed * obj.reverse
+    player.scale.x = obj.reverse
   }
 
   enemyCollide (player, enm) {
@@ -327,6 +353,12 @@ export default class extends Phaser.State {
         this.game.debug.body(obj)
       })
       this.objects.forEach(obj => {
+        this.game.debug.body(obj)
+      })
+      this.cubes.forEach(obj => {
+        this.game.debug.body(obj)
+      })
+      this.revolves.forEach(obj => {
         this.game.debug.body(obj)
       })
     }

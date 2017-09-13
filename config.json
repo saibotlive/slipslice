@@ -1,18 +1,18 @@
 {
-  "debug": false,
+  "debug": true,
   "objectives":
     "I've invited my penguin pals round \nfor a party but I need my house \nn-ice and cool for them!\nHelp me by grabbing as many \nice cubes as you can. \nBRRRRILLIANT!",
   "difficulty": {
     "easy": {
       "speed": 400,
       "jump": -700,
-      "tempRise": 1200,
+      "tempRise": 500,
       "gravity": 1500
     },
     "pro": {
       "speed": 600,
       "jump": -700,
-      "tempRise": 900,
+      "tempRise": 500,
       "gravity": 1500
     }
   },

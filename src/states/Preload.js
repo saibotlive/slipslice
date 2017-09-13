@@ -6,10 +6,10 @@ export default class extends Phaser.State {
   init () {}
 
   preload () {
-    this.load.tilemap('level1', './assets/map/level1.json', null, Phaser.Tilemap.TILED_JSON)
-    this.load.tilemap('level2', './assets/map/level2.json', null, Phaser.Tilemap.TILED_JSON)
-    this.load.tilemap('level3', './assets/map/level3.json', null, Phaser.Tilemap.TILED_JSON)
-    this.load.tilemap('level4', './assets/map/level4.json', null, Phaser.Tilemap.TILED_JSON)
+    this.load.tilemap('level1', './assets/map/level1-n.json', null, Phaser.Tilemap.TILED_JSON)
+    this.load.tilemap('level2', './assets/map/level2-n.json', null, Phaser.Tilemap.TILED_JSON)
+    this.load.tilemap('level3', './assets/map/level3-n.json', null, Phaser.Tilemap.TILED_JSON)
+    this.load.tilemap('level4', './assets/map/level4-n.json', null, Phaser.Tilemap.TILED_JSON)
 
     this.load.image('layout', './assets/map/layout.png')
     this.load.image('layout-close', './assets/map/layout-close.png')
@@ -30,7 +30,9 @@ export default class extends Phaser.State {
     this.load.image('bg', 'assets/images/bg.png')
     this.load.image('objectives-bg', 'assets/images/objectives-bg.png')
     this.load.image('howto1', 'assets/images/howto1.png')
-    const key = this.game.device.desktop ? 'howto3' : 'howto2'
+    this.load.image('howto2', 'assets/images/howto2.png')
+    this.load.image('howto3', 'assets/images/howto3.png')
+    const key = this.game.device.desktop ? 'howto5' : 'howto4'
     this.load.image(key, `assets/images/${key}.png`)
     this.load.image('difficulty-bg', 'assets/images/difficulty-bg.png')
     this.load.image('ready1', 'assets/images/ready1.png')
