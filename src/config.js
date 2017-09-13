@@ -7,7 +7,7 @@ export default {
   muted: false,
   totalScore: 0,
   allTotal: 0,
-  levelCount: 2,
+  levelCount: 1,
   difficulty: 'easy',
   localStorageName: 'slipslice',
   level: {
