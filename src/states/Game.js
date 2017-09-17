@@ -7,7 +7,6 @@ import Objects from '../sprites/Objects'
 import Enemies from '../sprites/Enemies'
 import TempGuage from '../sprites/TempGuage'
 import HeatSource from '../sprites/HeatSource'
-import Revolve from '../sprites/Revolve'
 import PauseMenu from '../sprites/PauseMenu'
 
 export default class extends Phaser.State {
@@ -26,8 +25,8 @@ export default class extends Phaser.State {
     this.nextPlay = 0
     this.started = false
     this.cameraPos = new Phaser.Point(0, 0)
-    this.camX = 350
-    this.camR = -350
+    this.camX = 150
+    this.camR = -150
     this.camY = -200
     this.lerp = 0.1
     this.score = 0
@@ -80,49 +79,18 @@ export default class extends Phaser.State {
       bgObj.y - this.offsetHeight,
       config.levelCount > 1 ? 'layout' : 'layout-close'
     )
+    this.bg2 = this.add.image(
+      bgObj.x + this.worldWidth / 2,
+      bgObj.y - this.offsetHeight,
+      config.levelCount > 1 ? 'layout' : 'layout-close'
+    )
 
     const finishlines = this.map.objects['finishline']
     finishlines.forEach(obj => {
       const finishline = this.add.image(obj.x, obj.y - this.diff, 'assets', 'finishline')
       finishline.anchor.set(0, 1)
     })
-
-    const cubes = this.map.objects['cube']
-    cubes.forEach(obj => {
-      this.cubes.push(new Objects(this.game, obj.x, obj.y - this.diff, 'cube', this.sfx))
-    })
-
-    const radiators = this.map.objects['radiator']
-    radiators.forEach(obj => {
-      this.objects.push(new HeatSource(this.game, obj.x, obj.y - this.diff, 'radiator', this.sfx))
-    })
-
-    const bbq = this.map.objects['bbq']
-    bbq &&
-      bbq.forEach(obj => {
-        this.objects.push(new HeatSource(this.game, obj.x, obj.y - this.diff, 'bbq', this.sfx))
-      })
-
-    const revolves = this.map.objects['revolve']
-    revolves.forEach(obj => {
-      this.revolves.push(
-        new Revolve(
-          this.game,
-          obj.x,
-          obj.y - this.diff,
-          'revolve',
-          this.sfx,
-          obj.properties.reverse
-        )
-      )
-    })
-
-    const enemies = this.map.objects['enemies']
-    enemies.forEach(obj => {
-      this.enemies.push(
-        new Enemies(this.game, obj.x, obj.y - this.diff, obj.name, obj.properties.flipped, this.sfx)
-      )
-    })
+    this.spriteGroup = this.add.group()
 
     this.hitArea = this.add.graphics(0, 0)
     this.hitArea.beginFill('#ffffff', 0)
@@ -164,6 +132,31 @@ export default class extends Phaser.State {
     this.cube.anchor.set(1, 0)
     this.cube.scale.set(0.45)
 
+    this.gearStick = this.add.image(
+      this.game.width / 2,
+      this.game.height - 10,
+      'assets',
+      'gearStick0000'
+    )
+    this.gearStick.scale.set(0.7)
+    this.gearStick.anchor.set(0.5, 1)
+    this.gearStick.fixedToCamera = true
+    this.gearStick.inputEnabled = true
+    this.gearStick.events.onInputDown.add(this.onDir, this)
+
+    this.gearStick.animations.add(
+      'right',
+      Phaser.Animation.generateFrameNames('gearStick', 0, 2, '', 4),
+      30,
+      false
+    )
+    this.gearStick.animations.add(
+      'left',
+      Phaser.Animation.generateFrameNames('gearStick', 2, 0, '', 4),
+      30,
+      false
+    )
+
     /* this.scoreTxt = this.game.add.bitmapText(
       this.game.width - 20,
       20,
@@ -182,17 +175,12 @@ export default class extends Phaser.State {
     })
     this.scoreTxt.anchor.set(1, 0)
     this.scoreTxt.fixedToCamera = true
-    this.fpsText = this.game.add.text(50, 50, '', { font: '16px Arial', fill: '#ff0000' })
+    this.fpsText = this.game.add.text(50, 250, '', { font: '16px Arial', fill: '#ff0000' })
     this.fpsText.fixedToCamera = true
 
-    this.gameshakers = this.add.image(
-      10,
-      this.game.height - 10,
-      'screen_assets',
-      'gameshakers_logo'
-    )
-    this.gameshakers.anchor.set(0, 1)
-    this.gameshakers.fixedToCamera = true
+    this.gs = this.add.image(10, this.game.height - 10, 'screen_assets', 'gameshakers_logo')
+    this.gs.anchor.set(0, 1)
+    this.gs.fixedToCamera = true
 
     this.nick = this.add.image(
       this.game.width - 10,
@@ -225,6 +213,7 @@ export default class extends Phaser.State {
   }
 
   update () {
+    // console.log('t', this.player.x)
     this.physics.arcade.collide(this.player, this.layers['collision'], this.collide, null, this)
     this.cameraPos.x +=
       (this.player.x + (this.player.scale.x > 0 ? this.camX : this.camR) - this.cameraPos.x) *
@@ -234,8 +223,12 @@ export default class extends Phaser.State {
     this.game.camera.focusOnXY(this.cameraPos.x, this.cameraPos.y)
 
     if (this.started) {
+      this.cubesData = this.map.objects['cube']
+      this.radiatorsData = this.map.objects['radiator']
+      this.bbqData = this.map.objects['bbq']
+      this.enemiesData = this.map.objects['enemies']
+      this.addSprites()
       this.physics.arcade.overlap(this.player, this.cubes, this.cubeCollide, null, this)
-      this.physics.arcade.overlap(this.player, this.revolves, this.revolveCollide, null, this)
       this.physics.arcade.collide(this.player, this.objects, this.objectCollide, null, this)
       this.physics.arcade.collide(this.player, this.enemies, this.enemyCollide, null, this)
       if (this.player.x > this.worldWidth - 300) {
@@ -267,29 +260,125 @@ export default class extends Phaser.State {
     this.started = true
   }
 
+  onDir () {
+    this.player.dirPressed = true
+    this.player.dir === 'right' ? (this.player.dir = 'left') : (this.player.dir = 'right')
+    this.player.leftBtn.isDown = this.player.dir === 'left'
+    this.player.rightBtn.isDown = this.player.dir === 'right'
+  }
+
   endGame () {
     this.state.start('Party', FadeOut, FadeIn)
+  }
+
+  addSprites () {
+    const mdist = this.game.math.distance(0, 0, this.game.width, this.game.height) + 300
+    // console.log('mdist', mdist)
+    this.cubesData.forEach(obj => {
+      /* console.log(
+        'dist',
+        this.game.math.distance(obj.x, obj.y - this.diff, this.player.x, this.player.y),
+        mdist
+      ) */
+      if (
+        !obj.added &&
+        this.game.math.distance(obj.x, obj.y - this.diff, this.game.camera.x, this.game.camera.y) <
+          mdist
+      ) {
+        const sprite = new Objects(this.game, obj.x, obj.y - this.diff, 'cube', this.sfx)
+        this.cubes.push(sprite)
+        this.spriteGroup.add(sprite)
+        obj.added = true
+      }
+    })
+
+    this.radiatorsData.forEach(obj => {
+      if (
+        !obj.added &&
+        this.game.math.distance(obj.x, obj.y - this.diff, this.game.camera.x, this.game.camera.y) <
+          mdist
+      ) {
+        const sprite = new HeatSource(this.game, obj.x, obj.y - this.diff, 'radiator', this.sfx)
+        this.objects.push(sprite)
+        this.spriteGroup.add(sprite)
+        obj.added = true
+      }
+    })
+
+    this.bbqData &&
+      this.bbqData.forEach(obj => {
+        if (
+          !obj.added &&
+          this.game.math.distance(
+            obj.x,
+            obj.y - this.diff,
+            this.game.camera.x,
+            this.game.camera.y
+          ) < mdist
+        ) {
+          const sprite = new HeatSource(this.game, obj.x, obj.y - this.diff, 'bbq', this.sfx)
+          this.objects.push(sprite)
+          this.spriteGroup.add(sprite)
+          obj.added = true
+        }
+      })
+
+    this.enemiesData.forEach(obj => {
+      if (
+        !obj.added &&
+        this.game.math.distance(obj.x, obj.y - this.diff, this.game.camera.x, this.game.camera.y) <
+          mdist
+      ) {
+        const sprite = new Enemies(
+          this.game,
+          obj.x,
+          obj.y - this.diff,
+          obj.name,
+          obj.properties.flipped,
+          this.sfx
+        )
+        this.enemies.push(sprite)
+        this.spriteGroup.add(sprite)
+        obj.added = true
+      }
+    })
   }
 
   onPause () {
     this.pausebg.pauseGame()
   }
 
+  collideProcess (player, obj) {
+    /* if (obj.index === this.mapped[1] && !this.player.flipped) {
+      return false
+    } else return true */
+  }
+
   collide (player, obj) {
     const slopeSpeed = player.speed / 10
-    if (obj.index === this.mapped[1]) {
+    if (obj.index === this.mapped[1] && !this.player.flipped) {
       player.onStairs = true
       this.playLoop('upstairs')
-      player.body.velocity.x += slopeSpeed * player.scale.x
+      player.body.velocity.x += slopeSpeed
       player.angle = -10
-    } else if (obj.index === this.mapped[2]) {
+    } else if (obj.index === this.mapped[1] && this.player.flipped) {
       player.onStairs = true
       this.playLoop('downstairs')
+      player.angle = -10
+    } else if (obj.index === this.mapped[2] && !this.player.flipped) {
+      player.onStairs = true
+      this.playLoop('downstairs')
+      player.angle = 10
+    } else if (obj.index === this.mapped[2] && this.player.flipped) {
+      player.onStairs = true
+      this.playLoop('upstairs')
+      player.body.velocity.x += slopeSpeed
       player.angle = 10
     } else {
       if (player.onStairs) {
         player.angle = 0
-        player.body.velocity.x = player.speed * player.scale.x
+
+        player.body.velocity.x = player.speed
         player.onStairs = false
       }
     }
@@ -315,22 +404,17 @@ export default class extends Phaser.State {
     if (obj.body.touching.up) {
       this.tempguage.tempDrop(obj.points)
       if (!obj.touched) this.score += obj.points
-      console.log('toouched');
       this.scoreTxt.text = this.score
-      player.body.velocity.y = -player.speed * 1.5
-      player.body.velocity.x += player.speed / 10 * player.scale.x
+      player.body.velocity.y = -player.speedY * 1.5
+      // player.body.velocity.x += player.speed / 10 * player.scale.x
       obj.hit()
     }
-  }
-
-  revolveCollide (player, obj) {
-    player.body.velocity.x = player.speed * obj.reverse
-    player.scale.x = obj.reverse
   }
 
   enemyCollide (player, enm) {
     this.sfx.stop('claps')
     this.started = false
+    this.player.speed = 0
     this.player.body.velocity.x = 0
     this.player.animations.play('dizzy')
     this.sfx.play('growl')

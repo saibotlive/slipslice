@@ -11,8 +11,8 @@ export default class extends Phaser.State {
     this.load.tilemap('level3', './assets/map/level3-n.json', null, Phaser.Tilemap.TILED_JSON)
     this.load.tilemap('level4', './assets/map/level4-n.json', null, Phaser.Tilemap.TILED_JSON)
 
-    this.load.image('layout', './assets/map/layout.png')
-    this.load.image('layout-close', './assets/map/layout-close.png')
+    this.load.image('layout', './assets/map/layout.jpg')
+    this.load.image('layout-close', './assets/map/layout-close.jpg')
     this.load.atlas(
       'assets',
       'assets/images/gameplay_assets.png',

@@ -12,7 +12,7 @@ export default class extends Phaser.Image {
     this.howto2 = this.addChild(this.game.add.image(960, 0, 'howto2'))
     this.howto3 = this.addChild(this.game.add.image(1920, 0, 'howto3'))
     this.howto4 = this.addChild(this.game.add.image(2880, 0, key))
-
+    this.inputEnabled = true
     /* this.nextBtn = new Button(
       this.game,
       this.game.width - 170,

@@ -6,13 +6,13 @@
     "easy": {
       "speed": 400,
       "jump": -700,
-      "tempRise": 500,
+      "tempRise": 700,
       "gravity": 1500
     },
     "pro": {
       "speed": 600,
       "jump": -700,
-      "tempRise": 500,
+      "tempRise": 700,
       "gravity": 1500
     }
   },

@@ -32,9 +32,17 @@
 	"spriteSourceSize": {"x":0,"y":0,"w":974,"h":213},
 	"sourceSize": {"w":974,"h":213}
 },
+"howto":
+{
+	"frame": {"x":1358,"y":0,"w":256,"h":278},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":278},
+	"sourceSize": {"w":256,"h":278}
+},
 "logo":
 {
-	"frame": {"x":1358,"y":0,"w":253,"h":113},
+	"frame": {"x":1615,"y":0,"w":253,"h":113},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":253,"h":113},
@@ -42,7 +50,7 @@
 },
 "logo_big":
 {
-	"frame": {"x":0,"y":214,"w":503,"h":406},
+	"frame": {"x":0,"y":279,"w":503,"h":406},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":503,"h":406},
@@ -50,7 +58,7 @@
 },
 "nextprev":
 {
-	"frame": {"x":504,"y":214,"w":98,"h":108},
+	"frame": {"x":504,"y":279,"w":98,"h":108},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":98,"h":108},
@@ -58,7 +66,7 @@
 },
 "nick_logo":
 {
-	"frame": {"x":603,"y":214,"w":134,"h":19},
+	"frame": {"x":603,"y":279,"w":134,"h":19},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":134,"h":19},
@@ -66,7 +74,7 @@
 },
 "pausebtn":
 {
-	"frame": {"x":738,"y":214,"w":40,"h":40},
+	"frame": {"x":738,"y":279,"w":40,"h":40},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":40},
@@ -74,15 +82,23 @@
 },
 "scoreboard":
 {
-	"frame": {"x":779,"y":214,"w":237,"h":103},
+	"frame": {"x":779,"y":279,"w":237,"h":103},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":237,"h":103},
 	"sourceSize": {"w":237,"h":103}
 },
+"sound-pause":
+{
+	"frame": {"x":1017,"y":279,"w":256,"h":278},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":278},
+	"sourceSize": {"w":256,"h":278}
+},
 "sound_off0000":
 {
-	"frame": {"x":1017,"y":214,"w":67,"h":67},
+	"frame": {"x":1274,"y":279,"w":67,"h":67},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":67,"h":67},
@@ -90,7 +106,7 @@
 },
 "sound_off0001":
 {
-	"frame": {"x":1085,"y":214,"w":67,"h":67},
+	"frame": {"x":1342,"y":279,"w":67,"h":67},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":67,"h":67},
@@ -98,7 +114,7 @@
 },
 "sound_on0000":
 {
-	"frame": {"x":1153,"y":214,"w":67,"h":67},
+	"frame": {"x":1410,"y":279,"w":67,"h":67},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":67,"h":67},
@@ -106,7 +122,7 @@
 },
 "sound_on0001":
 {
-	"frame": {"x":1221,"y":214,"w":67,"h":67},
+	"frame": {"x":1478,"y":279,"w":67,"h":67},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":67,"h":67},
@@ -114,7 +130,7 @@
 },
 "tempguage0000":
 {
-	"frame": {"x":1289,"y":214,"w":431,"h":50},
+	"frame": {"x":1546,"y":279,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -122,7 +138,7 @@
 },
 "tempguage0001":
 {
-	"frame": {"x":0,"y":621,"w":431,"h":50},
+	"frame": {"x":0,"y":686,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -130,7 +146,7 @@
 },
 "tempguage0002":
 {
-	"frame": {"x":432,"y":621,"w":431,"h":50},
+	"frame": {"x":432,"y":686,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -138,7 +154,7 @@
 },
 "tempguage0003":
 {
-	"frame": {"x":864,"y":621,"w":431,"h":50},
+	"frame": {"x":864,"y":686,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -146,7 +162,7 @@
 },
 "tempguage0004":
 {
-	"frame": {"x":1296,"y":621,"w":431,"h":50},
+	"frame": {"x":1296,"y":686,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -154,7 +170,7 @@
 },
 "tempguage0005":
 {
-	"frame": {"x":0,"y":672,"w":431,"h":50},
+	"frame": {"x":0,"y":737,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -162,7 +178,7 @@
 },
 "tempguage0006":
 {
-	"frame": {"x":432,"y":672,"w":431,"h":50},
+	"frame": {"x":432,"y":737,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -170,7 +186,7 @@
 },
 "tempguage0007":
 {
-	"frame": {"x":864,"y":672,"w":431,"h":50},
+	"frame": {"x":864,"y":737,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -178,7 +194,7 @@
 },
 "tempguage0008":
 {
-	"frame": {"x":1296,"y":672,"w":431,"h":50},
+	"frame": {"x":1296,"y":737,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -186,7 +202,7 @@
 },
 "tempguage0009":
 {
-	"frame": {"x":0,"y":723,"w":431,"h":50},
+	"frame": {"x":0,"y":788,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -194,7 +210,7 @@
 },
 "tempguage0010":
 {
-	"frame": {"x":432,"y":723,"w":431,"h":50},
+	"frame": {"x":432,"y":788,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -202,7 +218,7 @@
 },
 "tempguage0011":
 {
-	"frame": {"x":864,"y":723,"w":431,"h":50},
+	"frame": {"x":864,"y":788,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -210,7 +226,7 @@
 },
 "tempguage0012":
 {
-	"frame": {"x":1296,"y":723,"w":431,"h":50},
+	"frame": {"x":1296,"y":788,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -218,7 +234,7 @@
 },
 "tempguage0013":
 {
-	"frame": {"x":0,"y":774,"w":431,"h":50},
+	"frame": {"x":0,"y":839,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -226,7 +242,7 @@
 },
 "tempguage0014":
 {
-	"frame": {"x":432,"y":774,"w":431,"h":50},
+	"frame": {"x":432,"y":839,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -234,7 +250,7 @@
 },
 "tempguage0015":
 {
-	"frame": {"x":864,"y":774,"w":431,"h":50},
+	"frame": {"x":864,"y":839,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -242,7 +258,7 @@
 },
 "tempguage0016":
 {
-	"frame": {"x":1296,"y":774,"w":431,"h":50},
+	"frame": {"x":1296,"y":839,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -250,7 +266,7 @@
 },
 "tempguage0017":
 {
-	"frame": {"x":0,"y":825,"w":431,"h":50},
+	"frame": {"x":0,"y":890,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -258,7 +274,7 @@
 },
 "tempguage0018":
 {
-	"frame": {"x":432,"y":825,"w":431,"h":50},
+	"frame": {"x":432,"y":890,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -266,7 +282,7 @@
 },
 "tempguage0019":
 {
-	"frame": {"x":864,"y":825,"w":431,"h":50},
+	"frame": {"x":864,"y":890,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -274,7 +290,7 @@
 },
 "tempguage0020":
 {
-	"frame": {"x":1296,"y":825,"w":431,"h":50},
+	"frame": {"x":1296,"y":890,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -282,7 +298,7 @@
 },
 "tempguage0021":
 {
-	"frame": {"x":0,"y":876,"w":431,"h":50},
+	"frame": {"x":0,"y":941,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -290,7 +306,7 @@
 },
 "tempguage0022":
 {
-	"frame": {"x":432,"y":876,"w":431,"h":50},
+	"frame": {"x":432,"y":941,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -298,7 +314,7 @@
 },
 "tempguage0023":
 {
-	"frame": {"x":864,"y":876,"w":431,"h":50},
+	"frame": {"x":864,"y":941,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -306,7 +322,7 @@
 },
 "tempguage0024":
 {
-	"frame": {"x":1296,"y":876,"w":431,"h":50},
+	"frame": {"x":1296,"y":941,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -314,7 +330,7 @@
 },
 "tempguage0025":
 {
-	"frame": {"x":0,"y":927,"w":431,"h":50},
+	"frame": {"x":0,"y":992,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -322,7 +338,7 @@
 },
 "tempguage0026":
 {
-	"frame": {"x":432,"y":927,"w":431,"h":50},
+	"frame": {"x":432,"y":992,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -330,7 +346,7 @@
 },
 "tempguage0027":
 {
-	"frame": {"x":864,"y":927,"w":431,"h":50},
+	"frame": {"x":864,"y":992,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -338,7 +354,7 @@
 },
 "tempguage0028":
 {
-	"frame": {"x":1296,"y":927,"w":431,"h":50},
+	"frame": {"x":1296,"y":992,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -346,7 +362,7 @@
 },
 "tempguage0029":
 {
-	"frame": {"x":0,"y":978,"w":431,"h":50},
+	"frame": {"x":0,"y":1043,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -354,7 +370,7 @@
 },
 "tempguage0030":
 {
-	"frame": {"x":432,"y":978,"w":431,"h":50},
+	"frame": {"x":432,"y":1043,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -362,7 +378,7 @@
 },
 "tempguage0031":
 {
-	"frame": {"x":864,"y":978,"w":431,"h":50},
+	"frame": {"x":864,"y":1043,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -370,7 +386,7 @@
 },
 "tempguage0032":
 {
-	"frame": {"x":1296,"y":978,"w":431,"h":50},
+	"frame": {"x":1296,"y":1043,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -378,7 +394,7 @@
 },
 "tempguage0033":
 {
-	"frame": {"x":0,"y":1029,"w":431,"h":50},
+	"frame": {"x":0,"y":1094,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -386,7 +402,7 @@
 },
 "tempguage0034":
 {
-	"frame": {"x":432,"y":1029,"w":431,"h":50},
+	"frame": {"x":432,"y":1094,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -394,7 +410,7 @@
 },
 "tempguage0035":
 {
-	"frame": {"x":864,"y":1029,"w":431,"h":50},
+	"frame": {"x":864,"y":1094,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -402,7 +418,7 @@
 },
 "tempguage0036":
 {
-	"frame": {"x":1296,"y":1029,"w":431,"h":50},
+	"frame": {"x":1296,"y":1094,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -410,7 +426,7 @@
 },
 "tempguage0037":
 {
-	"frame": {"x":0,"y":1080,"w":431,"h":50},
+	"frame": {"x":0,"y":1145,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -418,7 +434,7 @@
 },
 "tempguage0038":
 {
-	"frame": {"x":432,"y":1080,"w":431,"h":50},
+	"frame": {"x":432,"y":1145,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -426,7 +442,7 @@
 },
 "tempguage0039":
 {
-	"frame": {"x":864,"y":1080,"w":431,"h":50},
+	"frame": {"x":864,"y":1145,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -434,7 +450,7 @@
 },
 "tempguage0040":
 {
-	"frame": {"x":1296,"y":1080,"w":431,"h":50},
+	"frame": {"x":1296,"y":1145,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -442,7 +458,7 @@
 },
 "tempguage0041":
 {
-	"frame": {"x":0,"y":1131,"w":431,"h":50},
+	"frame": {"x":0,"y":1196,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -450,7 +466,7 @@
 },
 "tempguage0042":
 {
-	"frame": {"x":432,"y":1131,"w":431,"h":50},
+	"frame": {"x":432,"y":1196,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -458,7 +474,7 @@
 },
 "tempguage0043":
 {
-	"frame": {"x":864,"y":1131,"w":431,"h":50},
+	"frame": {"x":864,"y":1196,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -466,7 +482,7 @@
 },
 "tempguage0044":
 {
-	"frame": {"x":1296,"y":1131,"w":431,"h":50},
+	"frame": {"x":1296,"y":1196,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -474,7 +490,7 @@
 },
 "tempguage0045":
 {
-	"frame": {"x":0,"y":1182,"w":431,"h":50},
+	"frame": {"x":0,"y":1247,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -482,7 +498,7 @@
 },
 "tempguage0046":
 {
-	"frame": {"x":432,"y":1182,"w":431,"h":50},
+	"frame": {"x":432,"y":1247,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -490,7 +506,7 @@
 },
 "tempguage0047":
 {
-	"frame": {"x":864,"y":1182,"w":431,"h":50},
+	"frame": {"x":864,"y":1247,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -498,7 +514,7 @@
 },
 "tempguage0048":
 {
-	"frame": {"x":1296,"y":1182,"w":431,"h":50},
+	"frame": {"x":1296,"y":1247,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -506,7 +522,7 @@
 },
 "tempguage0049":
 {
-	"frame": {"x":0,"y":1233,"w":431,"h":50},
+	"frame": {"x":0,"y":1298,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -514,7 +530,7 @@
 },
 "tempguage0050":
 {
-	"frame": {"x":432,"y":1233,"w":431,"h":50},
+	"frame": {"x":432,"y":1298,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -522,7 +538,7 @@
 },
 "tempguage0051":
 {
-	"frame": {"x":864,"y":1233,"w":431,"h":50},
+	"frame": {"x":864,"y":1298,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -530,7 +546,7 @@
 },
 "tempguage0052":
 {
-	"frame": {"x":1296,"y":1233,"w":431,"h":50},
+	"frame": {"x":1296,"y":1298,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -538,7 +554,7 @@
 },
 "tempguage0053":
 {
-	"frame": {"x":0,"y":1284,"w":431,"h":50},
+	"frame": {"x":0,"y":1349,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -546,7 +562,7 @@
 },
 "tempguage0054":
 {
-	"frame": {"x":432,"y":1284,"w":431,"h":50},
+	"frame": {"x":432,"y":1349,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -554,7 +570,7 @@
 },
 "tempguage0055":
 {
-	"frame": {"x":864,"y":1284,"w":431,"h":50},
+	"frame": {"x":864,"y":1349,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -562,7 +578,7 @@
 },
 "tempguage0056":
 {
-	"frame": {"x":1296,"y":1284,"w":431,"h":50},
+	"frame": {"x":1296,"y":1349,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -570,7 +586,7 @@
 },
 "tempguage0057":
 {
-	"frame": {"x":0,"y":1335,"w":431,"h":50},
+	"frame": {"x":0,"y":1400,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -578,7 +594,7 @@
 },
 "tempguage0058":
 {
-	"frame": {"x":432,"y":1335,"w":431,"h":50},
+	"frame": {"x":432,"y":1400,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -586,7 +602,7 @@
 },
 "tempguage0059":
 {
-	"frame": {"x":864,"y":1335,"w":431,"h":50},
+	"frame": {"x":864,"y":1400,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -594,7 +610,7 @@
 },
 "tempguage0060":
 {
-	"frame": {"x":1296,"y":1335,"w":431,"h":50},
+	"frame": {"x":1296,"y":1400,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -602,7 +618,7 @@
 },
 "tempguage0061":
 {
-	"frame": {"x":0,"y":1386,"w":431,"h":50},
+	"frame": {"x":0,"y":1451,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -610,7 +626,7 @@
 },
 "tempguage0062":
 {
-	"frame": {"x":432,"y":1386,"w":431,"h":50},
+	"frame": {"x":432,"y":1451,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -618,7 +634,7 @@
 },
 "tempguage0063":
 {
-	"frame": {"x":864,"y":1386,"w":431,"h":50},
+	"frame": {"x":864,"y":1451,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -626,7 +642,7 @@
 },
 "tempguage0064":
 {
-	"frame": {"x":1296,"y":1386,"w":431,"h":50},
+	"frame": {"x":1296,"y":1451,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -634,7 +650,7 @@
 },
 "tempguage0065":
 {
-	"frame": {"x":0,"y":1437,"w":431,"h":50},
+	"frame": {"x":0,"y":1502,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -642,7 +658,7 @@
 },
 "tempguage0066":
 {
-	"frame": {"x":432,"y":1437,"w":431,"h":50},
+	"frame": {"x":432,"y":1502,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -650,7 +666,7 @@
 },
 "tempguage0067":
 {
-	"frame": {"x":864,"y":1437,"w":431,"h":50},
+	"frame": {"x":864,"y":1502,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -658,7 +674,7 @@
 },
 "tempguage0068":
 {
-	"frame": {"x":1296,"y":1437,"w":431,"h":50},
+	"frame": {"x":1296,"y":1502,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -666,7 +682,7 @@
 },
 "tempguage0069":
 {
-	"frame": {"x":0,"y":1488,"w":431,"h":50},
+	"frame": {"x":0,"y":1553,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -674,7 +690,7 @@
 },
 "tempguage0070":
 {
-	"frame": {"x":432,"y":1488,"w":431,"h":50},
+	"frame": {"x":432,"y":1553,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -682,7 +698,7 @@
 },
 "tempguage0071":
 {
-	"frame": {"x":864,"y":1488,"w":431,"h":50},
+	"frame": {"x":864,"y":1553,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -690,7 +706,7 @@
 },
 "tempguage0072":
 {
-	"frame": {"x":1296,"y":1488,"w":431,"h":50},
+	"frame": {"x":1296,"y":1553,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -698,7 +714,7 @@
 },
 "tempguage0073":
 {
-	"frame": {"x":0,"y":1539,"w":431,"h":50},
+	"frame": {"x":0,"y":1604,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -706,7 +722,7 @@
 },
 "tempguage0074":
 {
-	"frame": {"x":432,"y":1539,"w":431,"h":50},
+	"frame": {"x":432,"y":1604,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -714,7 +730,7 @@
 },
 "tempguage0075":
 {
-	"frame": {"x":864,"y":1539,"w":431,"h":50},
+	"frame": {"x":864,"y":1604,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -722,7 +738,7 @@
 },
 "tempguage0076":
 {
-	"frame": {"x":1296,"y":1539,"w":431,"h":50},
+	"frame": {"x":1296,"y":1604,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -730,7 +746,7 @@
 },
 "tempguage0077":
 {
-	"frame": {"x":0,"y":1590,"w":431,"h":50},
+	"frame": {"x":0,"y":1655,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -738,7 +754,7 @@
 },
 "tempguage0078":
 {
-	"frame": {"x":432,"y":1590,"w":431,"h":50},
+	"frame": {"x":432,"y":1655,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -746,7 +762,7 @@
 },
 "tempguage0079":
 {
-	"frame": {"x":864,"y":1590,"w":431,"h":50},
+	"frame": {"x":864,"y":1655,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -754,7 +770,7 @@
 },
 "tempguage0080":
 {
-	"frame": {"x":1296,"y":1590,"w":431,"h":50},
+	"frame": {"x":1296,"y":1655,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -762,7 +778,7 @@
 },
 "tempguage0081":
 {
-	"frame": {"x":0,"y":1641,"w":431,"h":50},
+	"frame": {"x":0,"y":1706,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -770,7 +786,7 @@
 },
 "tempguage0082":
 {
-	"frame": {"x":432,"y":1641,"w":431,"h":50},
+	"frame": {"x":432,"y":1706,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -778,7 +794,7 @@
 },
 "tempguage0083":
 {
-	"frame": {"x":864,"y":1641,"w":431,"h":50},
+	"frame": {"x":864,"y":1706,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -786,7 +802,7 @@
 },
 "tempguage0084":
 {
-	"frame": {"x":1296,"y":1641,"w":431,"h":50},
+	"frame": {"x":1296,"y":1706,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -794,7 +810,7 @@
 },
 "tempguage0085":
 {
-	"frame": {"x":0,"y":1692,"w":431,"h":50},
+	"frame": {"x":0,"y":1757,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -802,7 +818,7 @@
 },
 "tempguage0086":
 {
-	"frame": {"x":432,"y":1692,"w":431,"h":50},
+	"frame": {"x":432,"y":1757,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -810,7 +826,7 @@
 },
 "tempguage0087":
 {
-	"frame": {"x":864,"y":1692,"w":431,"h":50},
+	"frame": {"x":864,"y":1757,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -818,7 +834,7 @@
 },
 "tempguage0088":
 {
-	"frame": {"x":1296,"y":1692,"w":431,"h":50},
+	"frame": {"x":1296,"y":1757,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -826,7 +842,7 @@
 },
 "tempguage0089":
 {
-	"frame": {"x":0,"y":1743,"w":431,"h":50},
+	"frame": {"x":0,"y":1808,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -834,7 +850,7 @@
 },
 "tempguage0090":
 {
-	"frame": {"x":432,"y":1743,"w":431,"h":50},
+	"frame": {"x":432,"y":1808,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -842,7 +858,7 @@
 },
 "tempguage0091":
 {
-	"frame": {"x":864,"y":1743,"w":431,"h":50},
+	"frame": {"x":864,"y":1808,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -850,7 +866,7 @@
 },
 "tempguage0092":
 {
-	"frame": {"x":1296,"y":1743,"w":431,"h":50},
+	"frame": {"x":1296,"y":1808,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -858,7 +874,7 @@
 },
 "tempguage0093":
 {
-	"frame": {"x":0,"y":1794,"w":431,"h":50},
+	"frame": {"x":0,"y":1859,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -866,7 +882,7 @@
 },
 "tempguage0094":
 {
-	"frame": {"x":432,"y":1794,"w":431,"h":50},
+	"frame": {"x":432,"y":1859,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -874,7 +890,7 @@
 },
 "tempguage0095":
 {
-	"frame": {"x":864,"y":1794,"w":431,"h":50},
+	"frame": {"x":864,"y":1859,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -882,7 +898,7 @@
 },
 "tempguage0096":
 {
-	"frame": {"x":1296,"y":1794,"w":431,"h":50},
+	"frame": {"x":1296,"y":1859,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -890,7 +906,7 @@
 },
 "tempguage0097":
 {
-	"frame": {"x":0,"y":1845,"w":431,"h":50},
+	"frame": {"x":0,"y":1910,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -898,7 +914,7 @@
 },
 "tempguage0098":
 {
-	"frame": {"x":432,"y":1845,"w":431,"h":50},
+	"frame": {"x":432,"y":1910,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -906,7 +922,7 @@
 },
 "tempguage0099":
 {
-	"frame": {"x":864,"y":1845,"w":431,"h":50},
+	"frame": {"x":864,"y":1910,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},
@@ -914,7 +930,7 @@
 },
 "tempguage0100":
 {
-	"frame": {"x":1296,"y":1845,"w":431,"h":50},
+	"frame": {"x":1296,"y":1910,"w":431,"h":50},
 	"rotated": false,
 	"trimmed": false,
 	"spriteSourceSize": {"x":0,"y":0,"w":431,"h":50},

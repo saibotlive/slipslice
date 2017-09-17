@@ -29,6 +29,6 @@ export const createText = (game, x, y, body, size, anchor, fill, align, stroke, 
     align
   })
   txt.anchor.set(anchor && anchor.x, anchor && anchor.y)
-  txt.setShadow(shadow && shadow.x, shadow && shadow.y, shadow && shadow.fill)
+  if (shadow) txt.setShadow(shadow && shadow.x, shadow && shadow.y, shadow && shadow.fill)
   return txt
 }
