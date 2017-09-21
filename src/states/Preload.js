@@ -34,6 +34,7 @@ export default class extends Phaser.State {
     this.load.image('howto3', 'assets/images/howto3.png')
     const key = this.game.device.desktop ? 'howto5' : 'howto4'
     this.load.image(key, `assets/images/${key}.png`)
+    this.load.image('howto6', 'assets/images/howto6.png')
     this.load.image('difficulty-bg', 'assets/images/difficulty-bg.png')
     this.load.image('ready1', 'assets/images/ready1.png')
     this.load.image('ready2', 'assets/images/ready2.png')

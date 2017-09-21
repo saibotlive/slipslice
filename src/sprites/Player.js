@@ -24,6 +24,7 @@ export default class extends Phaser.Sprite {
 
     hitArea.events.onInputDown.add(this.handleJump, this)
     this.jumpBtn = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR)
+    this.upBtn = this.game.input.keyboard.addKey(Phaser.Keyboard.UP)
     this.leftBtn = this.game.input.keyboard.addKey(Phaser.Keyboard.LEFT)
     this.rightBtn = this.game.input.keyboard.addKey(Phaser.Keyboard.RIGHT)
     this.sfx = sfx
@@ -44,12 +45,13 @@ export default class extends Phaser.Sprite {
   }
 
   update () {
-    const started = this.game.state.states.Game.started
     if (this.jumpBtn.isDown) {
       this.handleJump()
     }
+    if (this.upBtn.isDown) {
+      this.handleJump()
+    }
     if (this.leftBtn.isDown) {
-      console.log('down', this.dir)
       this.dir = 'left'
       const gearStick = this.game.state.states.Game.gearStick
       this.scale.x = -1

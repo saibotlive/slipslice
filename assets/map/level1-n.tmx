@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="left-down" width="711" height="53" tilewidth="32" tileheight="32" nextobjectid="94">
+<map version="1.0" tiledversion="1.0.2" orientation="orthogonal" renderorder="left-down" width="711" height="53" tilewidth="32" tileheight="32" nextobjectid="101">
  <tileset firstgid="1" name="slopes" tilewidth="32" tileheight="32" tilecount="51" columns="17">
   <image source="slopes-32.png" width="544" height="96"/>
  </tileset>
- <tileset firstgid="52" name="tiles" tilewidth="11364" tileheight="1680" tilecount="10" columns="0">
+ <tileset firstgid="52" name="tiles" tilewidth="11364" tileheight="1680" tilecount="11" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
    <image width="79" height="79" source="cube.png"/>
@@ -35,6 +35,9 @@
   <tile id="12">
    <image width="521" height="338" source="../../../../Downloads/Archive (1)/FinishLine/FINISH_LINE.png"/>
   </tile>
+  <tile id="13">
+   <image width="145" height="145" source="NoEntry.png"/>
+  </tile>
  </tileset>
  <objectgroup name="background">
   <object id="1" gid="54" x="0" y="1696" width="11364" height="1680"/>
@@ -52,10 +55,10 @@
   <object id="3" gid="61" x="3296" y="1152" width="217" height="137"/>
   <object id="4" gid="61" x="9237" y="1152" width="217" height="137"/>
   <object id="87" gid="61" x="14680" y="1152" width="217" height="137"/>
-  <object id="88" gid="61" x="20621" y="1152" width="217" height="137"/>
+  <object id="88" gid="61" x="20597" y="1152" width="217" height="137"/>
  </objectgroup>
  <objectgroup name="enemies">
-  <object id="5" name="orca" gid="2147483708" x="2792" y="1160" width="221" height="158">
+  <object id="5" name="orca" gid="2147483708" x="2664" y="1160" width="221" height="158">
    <properties>
     <property name="flipped" type="bool" value="true"/>
    </properties>
@@ -91,9 +94,9 @@
   <object id="18" gid="52" x="6344" y="1136" width="79" height="79"/>
   <object id="19" gid="52" x="6256" y="1136" width="79" height="79"/>
   <object id="20" gid="52" x="6432" y="1136" width="79" height="79"/>
-  <object id="21" gid="52" x="6904" y="1104" width="79" height="79"/>
-  <object id="22" gid="52" x="6992" y="1104" width="79" height="79"/>
-  <object id="23" gid="52" x="6948" y="1032" width="79" height="79"/>
+  <object id="21" gid="52" x="7008" y="1104" width="79" height="79"/>
+  <object id="22" gid="52" x="7096" y="1104" width="79" height="79"/>
+  <object id="23" gid="52" x="7052" y="1032" width="79" height="79"/>
   <object id="24" gid="52" x="7752" y="1104" width="79" height="79"/>
   <object id="25" gid="52" x="8416" y="1040" width="79" height="79"/>
   <object id="26" gid="52" x="8328" y="1040" width="79" height="79"/>
@@ -116,9 +119,9 @@
   <object id="71" gid="52" x="17728" y="1144" width="79" height="79"/>
   <object id="72" gid="52" x="17640" y="1144" width="79" height="79"/>
   <object id="73" gid="52" x="17816" y="1144" width="79" height="79"/>
-  <object id="74" gid="52" x="18288" y="1112" width="79" height="79"/>
-  <object id="75" gid="52" x="18376" y="1112" width="79" height="79"/>
-  <object id="76" gid="52" x="18332" y="1040" width="79" height="79"/>
+  <object id="74" gid="52" x="18408" y="1112" width="79" height="79"/>
+  <object id="75" gid="52" x="18496" y="1112" width="79" height="79"/>
+  <object id="76" gid="52" x="18452" y="1040" width="79" height="79"/>
   <object id="77" gid="52" x="19136" y="1112" width="79" height="79"/>
   <object id="78" gid="52" x="19800" y="1048" width="79" height="79"/>
   <object id="79" gid="52" x="19712" y="1048" width="79" height="79"/>
@@ -129,7 +132,15 @@
   <object id="84" gid="52" x="22176" y="1048" width="79" height="79"/>
  </objectgroup>
  <objectgroup name="finishline">
-  <object id="93" gid="64" x="22164" y="1139" width="521" height="338"/>
+  <object id="93" gid="64" x="22164" y="1145" width="521" height="338"/>
+ </objectgroup>
+ <objectgroup name="noentry">
+  <object id="94" gid="65" x="1168" y="1155" width="145" height="145"/>
+  <object id="96" gid="65" x="6767" y="1155" width="145" height="145"/>
+  <object id="97" gid="65" x="8688" y="1155" width="145" height="145"/>
+  <object id="98" gid="65" x="12573" y="1155" width="145" height="145"/>
+  <object id="99" gid="65" x="18144" y="1155" width="145" height="145"/>
+  <object id="100" gid="65" x="20032" y="1155" width="145" height="145"/>
  </objectgroup>
  <objectgroup name="player">
   <object id="33" gid="56" x="96" y="1120" width="215" height="156"/>

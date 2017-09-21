@@ -12,6 +12,7 @@ export default class extends Phaser.Image {
     this.howto2 = this.addChild(this.game.add.image(960, 0, 'howto2'))
     this.howto3 = this.addChild(this.game.add.image(1920, 0, 'howto3'))
     this.howto4 = this.addChild(this.game.add.image(2880, 0, key))
+    this.howto6 = this.addChild(this.game.add.image(3840, 0, 'howto6'))
     this.inputEnabled = true
     /* this.nextBtn = new Button(
       this.game,
@@ -28,13 +29,17 @@ export default class extends Phaser.Image {
     this.prevBtn2 = this.addButton(200, -1, this.prev)
     this.nextBtn3 = this.addButton(770, 1, this.next)
     this.prevBtn3 = this.addButton(200, -1, this.prev)
+    this.nextBtn4 = this.addButton(900, 1, this.next)
     this.prevBtn4 = this.addButton(60, -1, this.prev)
+    this.prevBtn5 = this.addButton(60, -1, this.prev)
     this.addChild(this.nextBtn1)
     this.addChild(this.prevBtn1)
     this.howto2.addChild(this.nextBtn2)
     this.howto2.addChild(this.prevBtn2)
     this.howto3.addChild(this.nextBtn3)
     this.howto3.addChild(this.prevBtn3)
+    this.howto4.addChild(this.nextBtn4)
+    this.howto4.addChild(this.prevBtn4)
 
     this.okBtn = new Button(
       this.game,
@@ -45,8 +50,8 @@ export default class extends Phaser.Image {
       36,
       new Phaser.Point(1, 1)
     )
-    this.howto4.addChild(this.prevBtn4)
-    this.howto4.addChild(this.okBtn)
+    this.howto6.addChild(this.prevBtn5)
+    this.howto6.addChild(this.okBtn)
   }
   show = () => {
     TweenLite.to(this, 0.5, { y: 0, ease: Back.easeOut })

@@ -90,6 +90,15 @@ export default class extends Phaser.State {
       const finishline = this.add.image(obj.x, obj.y - this.diff, 'assets', 'finishline')
       finishline.anchor.set(0, 1)
     })
+
+    this.noEntryData = this.map.objects['noentry']
+    this.jumpFwdData = this.map.objects['jumpfwd']
+    this.jumpBackData = this.map.objects['jumpback']
+    this.cubesData = this.map.objects['cube']
+    this.radiatorsData = this.map.objects['radiator']
+    this.bbqData = this.map.objects['bbq']
+    this.enemiesData = this.map.objects['enemies']
+
     this.spriteGroup = this.add.group()
 
     this.hitArea = this.add.graphics(0, 0)
@@ -218,15 +227,13 @@ export default class extends Phaser.State {
     this.cameraPos.x +=
       (this.player.x + (this.player.scale.x > 0 ? this.camX : this.camR) - this.cameraPos.x) *
       this.lerp
-    this.cameraPos.y += (this.player.y + this.camY - this.cameraPos.y) * this.lerp
+    if (this.player.canJump) {
+      this.cameraPos.y += (this.player.y + this.camY - this.cameraPos.y) * this.lerp
+    }
 
     this.game.camera.focusOnXY(this.cameraPos.x, this.cameraPos.y)
 
     if (this.started) {
-      this.cubesData = this.map.objects['cube']
-      this.radiatorsData = this.map.objects['radiator']
-      this.bbqData = this.map.objects['bbq']
-      this.enemiesData = this.map.objects['enemies']
       this.addSprites()
       this.physics.arcade.overlap(this.player, this.cubes, this.cubeCollide, null, this)
       this.physics.arcade.collide(this.player, this.objects, this.objectCollide, null, this)
@@ -274,6 +281,61 @@ export default class extends Phaser.State {
   addSprites () {
     const mdist = this.game.math.distance(0, 0, this.game.width, this.game.height) + 300
     // console.log('mdist', mdist)
+
+    this.noEntryData &&
+      this.noEntryData.forEach(obj => {
+        if (
+          !obj.added &&
+          this.game.math.distance(
+            obj.x,
+            obj.y - this.diff,
+            this.game.camera.x,
+            this.game.camera.y
+          ) < mdist
+        ) {
+          const sprite = this.add.image(obj.x, obj.y - this.diff, 'assets', 'noentry')
+          sprite.anchor.set(0, 1)
+          this.spriteGroup.add(sprite)
+          obj.added = true
+        }
+      })
+
+    this.jumpFwdData &&
+      this.jumpFwdData.forEach(obj => {
+        if (
+          !obj.added &&
+          this.game.math.distance(
+            obj.x,
+            obj.y - this.diff,
+            this.game.camera.x,
+            this.game.camera.y
+          ) < mdist
+        ) {
+          const sprite = this.add.image(obj.x, obj.y - this.diff, 'assets', 'jumpfwd')
+          sprite.anchor.set(0, 1)
+          this.spriteGroup.add(sprite)
+          obj.added = true
+        }
+      })
+
+    this.jumpBackData &&
+      this.jumpBackData.forEach(obj => {
+        if (
+          !obj.added &&
+          this.game.math.distance(
+            obj.x,
+            obj.y - this.diff,
+            this.game.camera.x,
+            this.game.camera.y
+          ) < mdist
+        ) {
+          const sprite = this.add.image(obj.x, obj.y - this.diff, 'assets', 'jumpback')
+          sprite.anchor.set(0, 1)
+          this.spriteGroup.add(sprite)
+          obj.added = true
+        }
+      })
+
     this.cubesData.forEach(obj => {
       /* console.log(
         'dist',

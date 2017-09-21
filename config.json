@@ -125,7 +125,7 @@
         },
         {
           "x": 280,
-          "y": 240,
+          "y": 360,
           "flipped": false,
           "fps": 25,
           "type": "slidy_penguin"
@@ -291,7 +291,7 @@
         },
         {
           "x": 280,
-          "y": 240,
+          "y": 360,
           "flipped": false,
           "fps": 25,
           "type": "slidy_penguin"
