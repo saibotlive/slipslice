@@ -1,26 +1,27 @@
 {
   "debug": false,
+  "showFPS": false,
   "objectives":
     "I've invited my penguin pals round \nfor a party but I need my house \nn-ice and cool for them!\nHelp me by grabbing as many \nice cubes as you can. \nBRRRRILLIANT!",
   "difficulty": {
     "easy": {
-      "speed": 400,
+      "speed": 500,
       "jump": -700,
-      "tempRise": 700,
+      "tempRise": 500,
       "gravity": 1500
     },
     "pro": {
-      "speed": 600,
+      "speed": 800,
       "jump": -700,
-      "tempRise": 700,
+      "tempRise": 800,
       "gravity": 1500
     }
   },
   "readyTime": 3000,
   "items": {
     "cube": { "points": 2 },
-    "radiator": { "points": 5 },
-    "bbq": { "points": 5 }
+    "radiator": { "points": 15 },
+    "bbq": { "points": 25 }
   },
   "enemies": {
     "yeti": { "hitX": 50 },

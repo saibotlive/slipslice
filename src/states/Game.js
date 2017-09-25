@@ -40,7 +40,7 @@ export default class extends Phaser.State {
     this.sfx.allowMultiple = true
     // this.sfx.onStop.add(this.soundComplete, this)
 
-    this.game.time.advancedTiming = true
+    this.game.time.advancedTiming = config.json.showFPS
 
     this.map = this.add.tilemap(`level${config.levelCount}`)
     this.map.addTilesetImage('slopes', 'slopes')
@@ -62,7 +62,7 @@ export default class extends Phaser.State {
             }
           }, this)
         }, this)
-        console.log('tiles', collisionTiles)
+        //console.log('tiles', collisionTiles)
         this.map.setCollision(collisionTiles, true, layer.name)
         this.mapped = config.level[config.levelCount]
         this.game.slopes.convertTilemapLayer(this.layers[layer.name], {
@@ -130,8 +130,8 @@ export default class extends Phaser.State {
       'screen_assets',
       this.onPause,
       this,
-      'pausebtn',
-      'pausebtn'
+      'pausebtn0000',
+      'pausebtn0000'
     )
     this.pausebtn.anchor.set(1, 0)
     this.pausebtn.fixedToCamera = true
@@ -184,8 +184,10 @@ export default class extends Phaser.State {
     })
     this.scoreTxt.anchor.set(1, 0)
     this.scoreTxt.fixedToCamera = true
-    this.fpsText = this.game.add.text(50, 250, '', { font: '16px Arial', fill: '#ff0000' })
-    this.fpsText.fixedToCamera = true
+    if (config.json.showFPS) {
+      this.fpsText = this.game.add.text(50, 250, '', { font: '16px Arial', fill: '#ff0000' })
+      this.fpsText.fixedToCamera = true
+    }
 
     this.gs = this.add.image(10, this.game.height - 10, 'screen_assets', 'gameshakers_logo')
     this.gs.anchor.set(0, 1)
@@ -253,7 +255,7 @@ export default class extends Phaser.State {
       }
     }
 
-    this.fpsText.setText(this.game.time.fps + ' FPS')
+    config.json.showFPS && this.fpsText.setText(this.game.time.fps + ' FPS')
   }
 
   startGame () {
