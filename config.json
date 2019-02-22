@@ -1,6 +1,6 @@
 {
   "debug": false,
-  "showFPS": false,
+  "showFPS": true,
   "objectives":
     "I've invited my penguin pals round \nfor a party but I need my house \nn-ice and cool for them!\nHelp me by grabbing as many \nice cubes as you can. \nBRRRRILLIANT!",
   "difficulty": {
